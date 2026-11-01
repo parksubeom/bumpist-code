@@ -24,7 +24,7 @@
 
 ## 체크리스트
 
-- [ ] 허브 원칙에 맞다 — 특정 프로젝트/도메인 전용이 아니라 두루 쓰는 공통 표준이다 ([CONTRIBUTING](https://github.com/parksubeom/bumpist-fe-guide/blob/main/CONTRIBUTING.md))
+- [ ] 허브 원칙에 맞다 — 특정 프로젝트/도메인 전용이 아니라 두루 쓰는 공통 표준이다 ([CONTRIBUTING](https://github.com/parksubeom/bumpist-code/blob/main/CONTRIBUTING.md))
 - [ ] 규칙을 바꿨다면, 그 규칙을 참조하는 스킬·README 표도 함께 맞췄다
 - [ ] 템플릿 파일(`.ts`/`.tsx`/`.json`)을 바꿨다면 구문이 유효한지 확인했다
 - [ ] 문서 안 상대 링크·파일 참조가 깨지지 않는다

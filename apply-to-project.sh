@@ -2,7 +2,7 @@
 # Bumpist Code 가이드를 소비 프로젝트에 **복사**한다.
 # 허브를 받아온(degit 또는 clone) 뒤, 소비 프로젝트 루트에서 실행하고, 끝나면 임시 폴더를 지운다.
 #
-#   npx degit parksubeom/bumpist-fe-guide .bumpist
+#   npx degit parksubeom/bumpist-code .bumpist
 #   sh .bumpist/apply-to-project.sh <vue|react|next> .bumpist
 #   rm -rf .bumpist
 #
@@ -27,7 +27,7 @@ esac
 
 if [ ! -d "$HUB/skills" ]; then
   echo "error: '$HUB/skills' 를 찾을 수 없습니다."
-  echo "  먼저 허브를 받으세요:  npx degit parksubeom/bumpist-fe-guide $HUB"
+  echo "  먼저 허브를 받으세요:  npx degit parksubeom/bumpist-code $HUB"
   exit 1
 fi
 
@@ -59,7 +59,7 @@ fi
 VER="${3:-}"
 [ -z "$VER" ] && VER=$(git -C "$HUB" describe --tags --always 2>/dev/null || echo "unknown")
 {
-  echo "guide: bumpist-fe-guide"
+  echo "guide: bumpist-code"
   echo "version: $VER"
   echo "framework: $FW"
   echo "adopted: $(date +%F)"

@@ -20,7 +20,7 @@
 
   <!-- hub -->
   <rect x="40" y="30" width="680" height="152" rx="10" fill="#f8fafc" stroke="#334155" stroke-width="1.8"/>
-  <text x="60" y="56" fill="#111827" font-size="14.5" font-weight="700">bumpist-fe-guide — 규칙·스킬 단일 출처 (복사해서 사용)</text>
+  <text x="60" y="56" fill="#111827" font-size="14.5" font-weight="700">bumpist-code — 규칙·스킬 단일 출처 (복사해서 사용)</text>
 
   <rect x="66" y="78" width="184" height="86" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="1.4"/>
   <text x="158" y="116" text-anchor="middle" fill="#111827" font-size="14" font-weight="700">rules/</text>
