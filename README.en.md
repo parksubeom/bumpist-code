@@ -82,12 +82,6 @@ Per-framework tracks: **Vue** (Vue Router, Pinia, vue-i18n), **React** (React Ro
 
 Typical flow: say *"build the member list screen"* → `plan-feature` → `create-slice` / `create-component` → `write-test` → `review-changes` → `prepare-commit` → `prepare-pr`.
 
-## Battle-tested on a real MVP
-
-The Next.js track was validated by building **[re-pin](https://github.com/parksubeom/re-pin)** — a production MVP for managing design-revision requests in outsourced/freelance work — from `setup-fe-project` bootstrap all the way through Supabase persistence, authentication, and a security pass.
-
-Three real-world landmines found along the way shipped as fixes in **v0.5.1**: the FSD `pages` layer renamed to `pageViews` to avoid colliding with the Next.js router, migration to `typescript-eslint` (eslint-config-next has flat-config/pnpm friction), and Vitest test collection scoped to intended directories.
-
 ## Design baseline
 
 Neutral and flat, one brand color, token-first, WCAG AA, restrained motion, and empty/loading/error states finished first — a baseline that doesn't fight any brand. For deeper design craft, it pairs with [impeccable](https://github.com/pbakaus/impeccable) (optional, installed separately).
