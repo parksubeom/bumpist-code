@@ -1,3 +1,5 @@
+> This English README may lag behind the Korean [README.md](./README.md), which is the source of truth.
+
 <p align="center">
   <img src="./assets/banner.svg" alt="Bumpist Code — Bump the rules. Ship consistent frontends." width="100%">
 </p>
