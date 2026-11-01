@@ -59,7 +59,7 @@ fi
 VER="${3:-}"
 [ -z "$VER" ] && VER=$(git -C "$HUB" describe --tags --always 2>/dev/null || echo "unknown")
 {
-  echo "guide: bumpist-fe-guide"
+  echo "guide: bumpist-code"
   echo "version: $VER"
   echo "framework: $FW"
   echo "adopted: $(date +%F)"
