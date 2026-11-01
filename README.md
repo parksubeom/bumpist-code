@@ -15,7 +15,7 @@ AI에게 화면을 맡겨도, 프로젝트마다 같은 구조와 같은 품질�
 [개발이 처음이라면 쉬운 설명부터](./비개발자-가이드.md) · [English](./README.en.md) · [용어집](./glossary.md)
 
 > [!NOTE]
-> npm v0.5.1이에요. Vue, React, Next.js 세 가지 프레임워크와 Claude 스킬 14개가 들어 있고, 실서비스 [re-pin](https://github.com/parksubeom/re-pin)으로 검증했어요. main에 새로 들어간 [규칙 번호](#규칙-번호)는 다음 npm 버전에 포함돼요.
+> npm v0.5.1이에요. Vue, React, Next.js 세 가지 프레임워크와 Claude 스킬 14개가 들어 있어요. main에 새로 들어간 [규칙 번호](#규칙-번호)는 다음 npm 버전에 포함돼요.
 
 ## 왜 필요한가요
 
@@ -135,21 +135,6 @@ flowchart LR
 - `node scripts/build-rules-index.mjs`가 번호를 모아 [`rules.json`](https://parksubeom.github.io/bumpist-code/rules.json)을 만들어요. 다른 도구는 이 파일로 규칙을 읽어요.
 - 번호만 고치고 `rules.json`을 다시 만들지 않으면 자동 검사(`rules-index`)가 막아요.
 - 지금은 `10-guardrails`의 규칙 18개(CORE-001부터 CORE-018까지)에 번호가 붙었어요. 나머지는 차례로 붙이는 중이고, 방법은 [docs/rule-ids.md](./docs/rule-ids.md)에 있어요.
-
-</details>
-
-<details>
-<summary>실전 사례: re-pin</summary>
-
-[re-pin](https://github.com/parksubeom/re-pin)은 외주 디자인 작업의 수정 요청을 핀으로 찍어 관리하는 서비스예요. 빈 저장소에서 시작해 Supabase 저장, 로그인, 보안 점검까지 이 룰북 위에서 완주했어요. 그 과정에서 터진 Next.js 트랙의 함정 세 개는 모두 v0.5.1 규칙으로 돌아왔어요.
-
-| 실전에서 터진 것 | 원인 | 규칙에 반영한 것 |
-| --- | --- | --- |
-| 첫 빌드가 깨짐 | Next.js가 `src/pages`를 예약해 FSD의 `pages` 레이어와 충돌 | 화면 레이어 이름을 `pageViews`로 변경 |
-| 커밋 훅이 깨짐 | Next.js 기본 ESLint 설정이 ESLint 9 + pnpm에서 파일 단위 검사를 깨뜨림 | `typescript-eslint` 기본 설정으로 교체 |
-| 테스트가 엉뚱한 파일을 읽음 | 테스트 도구가 `.claude/` 안의 템플릿까지 수집 | 세 트랙 모두 `src`만 수집하도록 제한 |
-
-프로젝트 안에서 우회하고 끝내지 않고 룰북에 반영해서, 다음 프로젝트는 같은 함정을 밟지 않아요.
 
 </details>
 
