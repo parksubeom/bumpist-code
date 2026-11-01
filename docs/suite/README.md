@@ -10,7 +10,7 @@
 - [ADR-006. Vercel 배포](adr/006-vercel-deploy.md) — 제안
 - [ADR-007. 파이프라인 실행 환경](adr/007-pipeline-runtime.md) — 제안
 - [ADR-008. 패키지 배포](adr/008-package-publish.md) — 제안
-- [ADR-009. 문서 언어](adr/009-docs-language.md) — 제안
+- [ADR-009. 문서 언어](adr/009-docs-language.md) — 결정됨
 - [ADR-010. 디자인 원칙 프로필](adr/010-design-profiles.md) — 결정됨
 - [ADR-011. 백엔드 기반](adr/011-backend-base.md) — 제안
 - [ADR-012. 시각 QA 관문](adr/012-visual-qa-gate.md) — 제안
