@@ -7,7 +7,7 @@
 // carries its marker inline at the end of the row instead.
 // Markers are HTML comments, so the rendered Markdown does not change.
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
-import { join, relative } from "node:path";
+import { join, relative, sep } from "node:path";
 
 const MARKER = /^<!--\s*rule:\s*([A-Z0-9]+-\d{3})\s*((?:\|[^|>]+)*)-->\s*$/;
 // Inside a table a marker can't sit on its own line, so it goes at the end of the row:
@@ -26,6 +26,8 @@ const rules = [];
 const seen = new Map();
 const errors = [];
 for (const file of files.sort()) {
+  // POSIX separators so rules.json is identical whether built on Windows or Linux.
+  const rel = relative(".", file).split(sep).join("/");
   const lines = readFileSync(file, "utf8").split("\n");
   let section = "";
   lines.forEach((line, i) => {
@@ -43,7 +45,7 @@ for (const file of files.sort()) {
     let title = raw;
     if (raw.startsWith("|")) title = raw.split("|").map((c) => c.trim()).filter(Boolean).join(" — ");
     title = title.replace(/^([-*]|\d+\.)\s+/, "").replace(/\*\*/g, "").replace(/`/g, "");
-    const where = `${relative(".", file)}:${i + 1}`;
+    const where = `${rel}:${i + 1}`;
     if (!ID.test(id)) errors.push(`${where} bad id ${id}`);
     if (seen.has(id)) errors.push(`${where} duplicate id ${id} (first at ${seen.get(id)})`);
     seen.set(id, where);
@@ -53,7 +55,7 @@ for (const file of files.sort()) {
       enforcement: (attrs.enforce ?? "review").split(",").map((s) => s.trim()),
       ...(attrs.tool ? { tool: attrs.tool } : {}),
       status: attrs.status ?? "enforced",
-      file: relative(".", file), section, line: j + 1,
+      file: rel, section, line: j + 1,
     });
   });
 }
