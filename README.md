@@ -15,7 +15,7 @@ AI에게 화면을 맡겨도, 프로젝트마다 같은 구조와 같은 품질�
 [개발이 처음이라면 쉬운 설명부터](./비개발자-가이드.md) · [English](./README.en.md) · [용어집](./glossary.md)
 
 > [!NOTE]
-> npm v0.5.1이에요. Vue, React, Next.js 세 가지 프레임워크와 Claude 스킬 14개가 들어 있고, 실서비스 [re-pin](https://github.com/parksubeom/re-pin)으로 검증했어요. main에 새로 들어간 [규칙 번호](#규칙-번호)는 다음 npm 버전에 포함돼요.
+> npm v0.5.1이에요. Vue, React, Next.js 세 가지 프레임워크와 Claude 스킬 14개가 들어 있어요. main에 새로 들어간 [규칙 번호](#규칙-번호)는 다음 npm 버전에 포함돼요.
 
 ## 왜 필요한가요
 
