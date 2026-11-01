@@ -134,14 +134,14 @@ flowchart LR
 
 - `node scripts/build-rules-index.mjs`가 번호를 모아 [`rules.json`](https://parksubeom.github.io/bumpist-code/rules.json)을 만들어요. 다른 도구는 이 파일로 규칙을 읽어요.
 - 번호만 고치고 `rules.json`을 다시 만들지 않으면 자동 검사(`rules-index`)가 막아요.
-- 지금은 `10-guardrails`의 규칙 18개(CORE-001부터 CORE-018까지)에 번호가 붙었어요. 나머지는 차례로 붙이는 중이고, 방법은 [docs/rule-ids.md](./docs/rule-ids.md)에 있어요.
+- 지금은 `10-guardrails`의 규칙 18개(CORE-001부터 CORE-018까지)와 `30-design`의 디자인 원칙(UI-001, UI-003부터 UI-011까지)에 번호가 붙었어요. 나머지는 차례로 붙이는 중이고, 방법은 [docs/rule-ids.md](./docs/rule-ids.md)에 있어요.
 
 </details>
 
 <details>
 <summary>디자인 기준</summary>
 
-기본 디자인 기준은 [bumpist-design](https://github.com/parksubeom/bumpist-design)의 원칙으로 옮겨 가는 중이에요. 지금의 [`rules/30-design.md`](./rules/30-design.md)는 이전 기준이고, bumpist-design v0.1과 함께 새 원칙(UI-003부터 UI-011까지)으로 다시 써요. 디자인 토큰이 있는 프로젝트에서는 언제나 토큰이 최종 기준이에요.
+기본 디자인 기준은 [bumpist-design](https://github.com/parksubeom/bumpist-design)의 원칙(UI-003부터 UI-011까지)이에요. [`rules/30-design.md`](./rules/30-design.md)가 그 원칙을 화면 코드에서 지키는 법을 담고 있어요. 칸막이 선 대신 여백으로 나누기, 모서리 12·16px, 신호등 색 대신 브랜드 색의 밝기 같은 것들이에요. 디자인 토큰이 있는 프로젝트에서는 언제나 토큰이 최종 기준이에요.
 
 미감을 더 끌어올리고 싶다면 [impeccable](https://github.com/pbakaus/impeccable)을 함께 쓸 수 있어요(`npx impeccable install`).
 
@@ -172,7 +172,7 @@ npm에 [semver](https://semver.org/lang/ko/)로 배포해요. 받은 버전은 �
 | `10-guardrails.md` | 임의 생성·변경·삭제 금지선 |
 | `15-working-sessions.md` | 작업 세션: 계획 먼저, 맥락 얇게, 자율성과 안전의 균형 |
 | `20-project-structure.md` | 모노레포 배치와 FSD 계층 |
-| `30-design.md` | 디자인 원칙 (bumpist-design 기준으로 개편 예정) |
+| `30-design.md` | 디자인 원칙 UI-003~011: 여백으로 나누기, 모서리 12·16px, 신호등 색 금지 |
 | `35-accessibility.md` | 접근성: 시맨틱, 키보드, 폼, 모달, 대비 |
 | `37-figma-to-code.md` | Figma 디자인을 토큰과 컨벤션에 맞춰 옮기기 |
 | `40-api-types.md` | openapi-typescript로 API 타입 만들기 |

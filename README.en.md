@@ -84,7 +84,7 @@ Typical flow: say *"build the member list screen"* → `plan-feature` → `creat
 
 ## Design baseline
 
-Neutral and flat, one brand color, token-first, WCAG AA, restrained motion, and empty/loading/error states finished first — a baseline that doesn't fight any brand. For deeper design craft, it pairs with [impeccable](https://github.com/pbakaus/impeccable) (optional, installed separately).
+The [bumpist-design](https://github.com/parksubeom/bumpist-design) principles (UI-003 to UI-011): spacing and type size instead of dividers and shadows, no pure white or black, 12px and 16px corners only, status shown with the brand color's lightness instead of traffic-light colors, and mobile first for consumer apps. Design tokens always win. For deeper design craft, it pairs with [impeccable](https://github.com/pbakaus/impeccable) (optional, installed separately).
 
 ## Learn more (Korean)
 
