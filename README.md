@@ -139,21 +139,6 @@ flowchart LR
 </details>
 
 <details>
-<summary>실전 사례: re-pin</summary>
-
-[re-pin](https://github.com/parksubeom/re-pin)은 외주 디자인 작업의 수정 요청을 핀으로 찍어 관리하는 서비스예요. 빈 저장소에서 시작해 Supabase 저장, 로그인, 보안 점검까지 이 룰북 위에서 완주했어요. 그 과정에서 터진 Next.js 트랙의 함정 세 개는 모두 v0.5.1 규칙으로 돌아왔어요.
-
-| 실전에서 터진 것 | 원인 | 규칙에 반영한 것 |
-| --- | --- | --- |
-| 첫 빌드가 깨짐 | Next.js가 `src/pages`를 예약해 FSD의 `pages` 레이어와 충돌 | 화면 레이어 이름을 `pageViews`로 변경 |
-| 커밋 훅이 깨짐 | Next.js 기본 ESLint 설정이 ESLint 9 + pnpm에서 파일 단위 검사를 깨뜨림 | `typescript-eslint` 기본 설정으로 교체 |
-| 테스트가 엉뚱한 파일을 읽음 | 테스트 도구가 `.claude/` 안의 템플릿까지 수집 | 세 트랙 모두 `src`만 수집하도록 제한 |
-
-프로젝트 안에서 우회하고 끝내지 않고 룰북에 반영해서, 다음 프로젝트는 같은 함정을 밟지 않아요.
-
-</details>
-
-<details>
 <summary>디자인 기준</summary>
 
 기본 디자인 기준은 [bumpist-design](https://github.com/parksubeom/bumpist-design)의 원칙으로 옮겨 가는 중이에요. 지금의 [`rules/30-design.md`](./rules/30-design.md)는 이전 기준이고, bumpist-design v0.1과 함께 새 원칙(UI-003부터 UI-011까지)으로 다시 써요. 디자인 토큰이 있는 프로젝트에서는 언제나 토큰이 최종 기준이에요.
