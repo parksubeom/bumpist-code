@@ -10,7 +10,7 @@ AI 또는 작업자는 작업 범위를 벗어나는 변경이 필요한 경우,
 
 ## 1. 기본 원칙
 
-<!-- rule: CORE-001 | severity: error | enforce: review -->
+<!-- rule: CORE-001 | severity: error | enforce: lint -->
 - 명시되지 않은 패키지, 설정을 임의로 추가하지 않는다.
 <!-- rule: CORE-002 | severity: error | enforce: review -->
 - 기존 구조나 설정을 변경해야 하는 경우 반드시 변경 사유를 먼저 설명한다.
