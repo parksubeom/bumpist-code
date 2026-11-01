@@ -10,29 +10,34 @@ AI 또는 작업자는 작업 범위를 벗어나는 변경이 필요한 경우,
 
 ## 1. 기본 원칙
 
+<!-- rule: CORE-001 | severity: error | enforce: review -->
 - 명시되지 않은 패키지, 설정을 임의로 추가하지 않는다.
+<!-- rule: CORE-002 | severity: error | enforce: review -->
 - 기존 구조나 설정을 변경해야 하는 경우 반드시 변경 사유를 먼저 설명한다.
+<!-- rule: CORE-003 | severity: error | enforce: review -->
 - 보안 정보, 인증 정보, 환경별 설정값은 코드에 직접 작성하지 않는다.
+<!-- rule: CORE-004 | severity: error | enforce: review -->
 - 자동 생성 또는 자동 수정 작업은 프로젝트 규칙을 벗어나지 않는 범위에서만 수행한다.
+<!-- rule: CORE-005 | severity: error | enforce: review -->
 - 작업 요청 범위에 포함되지 않은 리팩터링, 구조 변경, 의존성 변경은 수행하지 않는다.
 
 ## 2. 금지 항목
 
 | 항목                              | 규칙                                                                                                                          |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| 임의 패키지 추가 금지             | 명시되지 않은 라이브러리 또는 패키지를 임의로 설치하지 않는다.                                                                |
-| 지정되지 않은 폴더 구조 생성 금지 | FSD 계층/모노레포 구조 외의 폴더를 임의로 생성하지 않는다.                                                                    |
-| 버전 임의 변경 금지               | Node.js, pnpm, 패키지, 프레임워크, 라이브러리 버전을 임의로 변경하지 않는다.                                                  |
-| 설정 파일 삭제 금지               | `package.json`, `tsconfig.json`, `vite.config.ts`, ESLint/Prettier/Husky/CI 설정 파일 등을 임의로 삭제하지 않는다.            |
-| 설정 파일 임의 변경 금지          | 빌드, 린트, 포맷, 테스트, 배포 설정을 요청 없이 변경하지 않는다.                                                              |
-| 보안 정보 하드코딩 금지           | API Key, Secret, Token, 인증 정보 등을 코드에 직접 작성하지 않는다.                                                           |
-| 환경 변수 임의 추가 금지          | 필요한 환경 변수가 있다면 이름, 목적, 사용 위치를 설명한 뒤 추가한다.                                                         |
-| 기존 API 스펙 임의 변경 금지      | 요청/응답 형식, 필드명, 타입, 상태 코드 등을 승인 없이 변경하지 않는다. `schema.d.ts`는 생성 파일이며 손으로 수정하지 않는다. |
-| 기존 동작 임의 변경 금지          | 요청받은 범위 외의 비즈니스 로직이나 기존 동작을 임의로 수정하지 않는다.                                                      |
-| FSD 경계 위반 금지                | 상위 계층을 하위에서 import하지 않는다. 위반을 억제(eslint-disable)하지 않고 구조를 고친다.                                   |
-| 불필요한 리팩터링 금지            | 기능 구현과 직접 관련 없는 코드 정리, 구조 변경, 네이밍 변경을 임의로 수행하지 않는다.                                        |
-| 테스트 임의 삭제 금지             | 실패하는 테스트를 해결하지 않고 삭제하거나 비활성화하지 않는다.                                                               |
-| 주석/문서 임의 삭제 금지          | 기존 주석, 문서, README 내용을 사유 없이 삭제하지 않는다.                                                                     |
+| 임의 패키지 추가 금지             | 명시되지 않은 라이브러리 또는 패키지를 임의로 설치하지 않는다. <!-- rule: CORE-006 | severity: error | enforce: review --> |
+| 지정되지 않은 폴더 구조 생성 금지 | FSD 계층/모노레포 구조 외의 폴더를 임의로 생성하지 않는다. <!-- rule: CORE-007 | severity: error | enforce: review --> |
+| 버전 임의 변경 금지               | Node.js, pnpm, 패키지, 프레임워크, 라이브러리 버전을 임의로 변경하지 않는다. <!-- rule: CORE-008 | severity: error | enforce: review --> |
+| 설정 파일 삭제 금지               | `package.json`, `tsconfig.json`, `vite.config.ts`, ESLint/Prettier/Husky/CI 설정 파일 등을 임의로 삭제하지 않는다. <!-- rule: CORE-009 | severity: error | enforce: review --> |
+| 설정 파일 임의 변경 금지          | 빌드, 린트, 포맷, 테스트, 배포 설정을 요청 없이 변경하지 않는다. <!-- rule: CORE-010 | severity: error | enforce: review --> |
+| 보안 정보 하드코딩 금지           | API Key, Secret, Token, 인증 정보 등을 코드에 직접 작성하지 않는다. <!-- rule: CORE-011 | severity: error | enforce: ci,review | tool: secret-scan --> |
+| 환경 변수 임의 추가 금지          | 필요한 환경 변수가 있다면 이름, 목적, 사용 위치를 설명한 뒤 추가한다. <!-- rule: CORE-012 | severity: error | enforce: review --> |
+| 기존 API 스펙 임의 변경 금지      | 요청/응답 형식, 필드명, 타입, 상태 코드 등을 승인 없이 변경하지 않는다. `schema.d.ts`는 생성 파일이며 손으로 수정하지 않는다. <!-- rule: CORE-013 | severity: error | enforce: ci,review --> |
+| 기존 동작 임의 변경 금지          | 요청받은 범위 외의 비즈니스 로직이나 기존 동작을 임의로 수정하지 않는다. <!-- rule: CORE-014 | severity: error | enforce: review --> |
+| FSD 경계 위반 금지                | 상위 계층을 하위에서 import하지 않는다. 위반을 억제(eslint-disable)하지 않고 구조를 고친다. <!-- rule: CORE-015 | severity: error | enforce: lint | tool: eslint-plugin-boundaries --> |
+| 불필요한 리팩터링 금지            | 기능 구현과 직접 관련 없는 코드 정리, 구조 변경, 네이밍 변경을 임의로 수행하지 않는다. <!-- rule: CORE-016 | severity: error | enforce: review --> |
+| 테스트 임의 삭제 금지             | 실패하는 테스트를 해결하지 않고 삭제하거나 비활성화하지 않는다. <!-- rule: CORE-017 | severity: error | enforce: review --> |
+| 주석/문서 임의 삭제 금지          | 기존 주석, 문서, README 내용을 사유 없이 삭제하지 않는다. <!-- rule: CORE-018 | severity: error | enforce: review --> |
 
 ## 3. 패키지 추가 기준
 

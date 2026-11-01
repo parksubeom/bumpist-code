@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://parksubeom.github.io/bumpist-code/schemas/rules/v0.json",
+  "title": "Bumpist rule index (C3)",
+  "description": "Every rule in bumpist-code with a stable ID, how it is enforced and where it lives. Generated from <!-- rule: … --> markers in rules/**/*.md by scripts/build-rules-index.mjs.",
+  "type": "object",
+  "required": [
+    "$schema",
+    "version",
+    "rules"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/rule"
+      }
+    },
+    "proposals": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/proposal"
+      },
+      "description": "Rule proposals from claude-distill / bumpist-agents retro"
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^(CORE|ARCH|UI|A11Y|FIGMA|API|TEST|GIT|SEC|DATA|CI|OPS|NEXT|REACT|VUE)-[0-9]{3}$"
+    },
+    "rule": {
+      "type": "object",
+      "required": [
+        "id",
+        "title",
+        "severity",
+        "enforcement",
+        "status",
+        "file"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "title": {
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "error",
+            "warn",
+            "info"
+          ]
+        },
+        "enforcement": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "lint",
+              "ci",
+              "review",
+              "human",
+              "build"
+            ]
+          },
+          "minItems": 1
+        },
+        "tool": {
+          "type": "string",
+          "description": "e.g. eslint rule name or CI check id"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "warn",
+            "enforced",
+            "deprecated"
+          ]
+        },
+        "file": {
+          "type": "string"
+        },
+        "section": {
+          "type": "string"
+        },
+        "line": {
+          "type": "integer"
+        }
+      }
+    },
+    "proposal": {
+      "type": "object",
+      "required": [
+        "area",
+        "title",
+        "evidence"
+      ],
+      "properties": {
+        "area": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Session or project references"
+        },
+        "suggestedEnforcement": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "lint",
+              "ci",
+              "review",
+              "human",
+              "build"
+            ]
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

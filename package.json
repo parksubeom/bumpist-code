@@ -6,13 +6,16 @@
     "bumpist-code": "bin/cli.js"
   },
   "scripts": {
-    "test": "node --test test/cli.test.js"
+    "test": "node --test test/cli.test.js",
+    "rules:index": "node scripts/build-rules-index.mjs"
   },
   "files": [
     "bin",
     "rules",
     "skills",
-    "docs"
+    "docs",
+    "rules.json",
+    "schemas"
   ],
   "keywords": [
     "claude",
