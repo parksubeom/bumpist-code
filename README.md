@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/parksubeom/bumpist-fe-guide/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/parksubeom/bumpist-fe-guide/ci.yml?branch=main&style=flat-square&label=CI"></a>
+  <a href="https://github.com/parksubeom/bumpist-code/actions/workflows/ci.yml"><img alt="CI" src="https://img.shields.io/github/actions/workflow/status/parksubeom/bumpist-code/ci.yml?branch=main&style=flat-square&label=CI"></a>
   <img alt="npm" src="https://img.shields.io/npm/v/bumpist-code?style=flat-square&color=6d6afe&label=bumpist-code">
   <img alt="npm downloads" src="https://img.shields.io/npm/dt/bumpist-code?style=flat-square&color=20C20E&label=downloads">
   <img alt="Vue" src="https://img.shields.io/badge/Vue-3-4FC08D?style=flat-square&logo=vuedotjs&logoColor=white">
@@ -94,7 +94,7 @@ git add .claude docs/ai CLAUDE.md && git commit -m "chore: adopt bumpist-code gu
 - 확인: `ls .claude/skills/`
 
 > 버전 고정: `npx bumpist-code@0.5.1 init vue`. npm 없이 쓰려면
-> `npx degit parksubeom/bumpist-fe-guide#v0.5.1 .bumpist && sh .bumpist/apply-to-project.sh vue .bumpist v0.5.1 && rm -rf .bumpist` 도 된다.
+> `npx degit parksubeom/bumpist-code#v0.5.1 .bumpist && sh .bumpist/apply-to-project.sh vue .bumpist v0.5.1 && rm -rf .bumpist` 도 된다.
 
 ### 시나리오 B — 새 프로젝트를 처음부터 (빈 폴더)
 
@@ -317,7 +317,7 @@ API 흐름은 MSW 통합, 사용자 플로우는 Playwright E2E.
 프로젝트 안에서만 우회하고 넘어가는 대신 허브에 반영해서, **다음 프로젝트는 같은 지뢰를 처음부터 밟지
 않는다** — 이게 이 가이드가 버전을 bump하는 방식이다.
 
-> 이 가이드로 만든 프로젝트가 있다면 [이슈로 알려 달라](https://github.com/parksubeom/bumpist-fe-guide/issues) — 확인 후 여기에 추가한다.
+> 이 가이드로 만든 프로젝트가 있다면 [이슈로 알려 달라](https://github.com/parksubeom/bumpist-code/issues) — 확인 후 여기에 추가한다.
 
 ## 디자인 지향
 
@@ -504,7 +504,7 @@ npx impeccable install    # 그다음 AI 툴에서 /impeccable init
 ## 기여
 
 버그를 밟았거나(어느 트랙·버전·재현 방법) 두루 쓸 규칙·스킬 아이디어가 있으면
-[이슈](https://github.com/parksubeom/bumpist-fe-guide/issues)부터 열어 달라 — 템플릿이 안내한다.
+[이슈](https://github.com/parksubeom/bumpist-code/issues)부터 열어 달라 — 템플릿이 안내한다.
 원칙은 하나다: **여러 프로젝트에 두루 쓰는 공통 표준만 받는다** (도메인 전용은 각 프로젝트 `.claude/`에).
 흐름·커밋 규약은 [CONTRIBUTING.md](./CONTRIBUTING.md), 버전별 변경 이력은 [CHANGELOG.md](./CHANGELOG.md)에 있다.
 
@@ -514,4 +514,4 @@ npx impeccable install    # 그다음 AI 툴에서 /impeccable init
 
 - ⭐ **Star** — 이 가이드 도움이 됐다면!
 - 🔗 **공유** — 바이브 코딩은 하는데 구조·퀄리티가 불안한 동료에게는 `npx bumpist-code@latest init` 한 줄이면 충분하다.
-- 🐛 **피드백** — 버그·개선 제안은 [이슈](https://github.com/parksubeom/bumpist-fe-guide/issues)로. 실전에서 깨진 사례일수록 환영한다.
+- 🐛 **피드백** — 버그·개선 제안은 [이슈](https://github.com/parksubeom/bumpist-code/issues)로. 실전에서 깨진 사례일수록 환영한다.

@@ -145,13 +145,13 @@ Next.js 3트랙 정합화 + React·Next 앱 템플릿 실물 번들. 이제 Vue�
 
 - 배포 방식을 git submodule → 복사(clone/degit) → **npm CLI**로 전환.
 
-[Unreleased]: https://github.com/parksubeom/bumpist-fe-guide/compare/v0.5.1...HEAD
-[0.5.1]: https://github.com/parksubeom/bumpist-fe-guide/compare/v0.5.0...v0.5.1
-[0.5.0]: https://github.com/parksubeom/bumpist-fe-guide/compare/v0.4.2...v0.5.0
-[0.4.2]: https://github.com/parksubeom/bumpist-fe-guide/compare/v0.4.1...v0.4.2
-[0.4.1]: https://github.com/parksubeom/bumpist-fe-guide/compare/v0.4.0...v0.4.1
-[0.4.0]: https://github.com/parksubeom/bumpist-fe-guide/compare/v0.3.1...v0.4.0
-[0.3.1]: https://github.com/parksubeom/bumpist-fe-guide/compare/v0.3.0...v0.3.1
-[0.3.0]: https://github.com/parksubeom/bumpist-fe-guide/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/parksubeom/bumpist-fe-guide/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/parksubeom/bumpist-fe-guide/releases/tag/v0.1.0
+[Unreleased]: https://github.com/parksubeom/bumpist-code/compare/v0.5.1...HEAD
+[0.5.1]: https://github.com/parksubeom/bumpist-code/compare/v0.5.0...v0.5.1
+[0.5.0]: https://github.com/parksubeom/bumpist-code/compare/v0.4.2...v0.5.0
+[0.4.2]: https://github.com/parksubeom/bumpist-code/compare/v0.4.1...v0.4.2
+[0.4.1]: https://github.com/parksubeom/bumpist-code/compare/v0.4.0...v0.4.1
+[0.4.0]: https://github.com/parksubeom/bumpist-code/compare/v0.3.1...v0.4.0
+[0.3.1]: https://github.com/parksubeom/bumpist-code/compare/v0.3.0...v0.3.1
+[0.3.0]: https://github.com/parksubeom/bumpist-code/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/parksubeom/bumpist-code/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/parksubeom/bumpist-code/releases/tag/v0.1.0

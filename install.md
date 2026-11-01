@@ -68,7 +68,7 @@ npm에 semver(git 태그와 동일: `0.1.0`)로 배포한다. 받는 순간 그 
 npm/npx를 못 쓰는 환경이면 degit(또는 clone)으로 직접 복사한다:
 
 ```
-npx degit parksubeom/bumpist-fe-guide#v0.5.1 .bumpist
+npx degit parksubeom/bumpist-code#v0.5.1 .bumpist
 sh .bumpist/apply-to-project.sh vue .bumpist v0.5.1
 rm -rf .bumpist
 ```

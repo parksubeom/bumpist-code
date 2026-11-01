@@ -40,11 +40,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/parksubeom/bumpist-fe-guide.git"
+    "url": "git+https://github.com/parksubeom/bumpist-code.git"
   },
-  "homepage": "https://github.com/parksubeom/bumpist-fe-guide#readme",
+  "homepage": "https://github.com/parksubeom/bumpist-code#readme",
   "bugs": {
-    "url": "https://github.com/parksubeom/bumpist-fe-guide/issues"
+    "url": "https://github.com/parksubeom/bumpist-code/issues"
   },
   "author": "parksubeom",
   "license": "MIT",

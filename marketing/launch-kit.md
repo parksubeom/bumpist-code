@@ -4,7 +4,7 @@
 > 톤 원칙: 진정성 우선, 과장 금지. 통계·사용자 수·별점 언급 금지(실측 근거 없는 수치는 쓰지 않는다).
 > 숫자 규칙: 패키지에 스킬은 **14개**, `init`이 `.claude/`로 복사하는 것은 **13개**
 > (`setup-fe-project`는 패키지에 동봉돼 새 프로젝트 부트스트랩을 담당). 두 숫자를 섞어 쓰지 않는다.
-> 링크는 상황에 맞게 교체: GitHub `https://github.com/parksubeom/bumpist-fe-guide` ·
+> 링크는 상황에 맞게 교체: GitHub `https://github.com/parksubeom/bumpist-code` ·
 > npm `https://www.npmjs.com/package/bumpist-code` · re-pin `https://github.com/parksubeom/re-pin`.
 
 핵심 메시지 4축 (모든 채널 공통):
@@ -31,7 +31,7 @@ Bumpist Code — 바이브 코딩의 구조·보안 구멍을 규칙+Claude 스�
 **URL:**
 
 ```
-https://github.com/parksubeom/bumpist-fe-guide
+https://github.com/parksubeom/bumpist-code
 ```
 
 **소개 (본문):**
@@ -178,7 +178,7 @@ MIT 라이선스, 필요한 건 Node 18+와 Claude Code뿐입니다.
 
 npx bumpist-code@latest init
 
-⭐ github.com/parksubeom/bumpist-fe-guide
+⭐ github.com/parksubeom/bumpist-code
 📦 npmjs.com/package/bumpist-code
 
 써보고 깨지는 지점이 있으면 이슈로 남겨 주세요. 그게 다음 버전이 됩니다.
@@ -195,7 +195,7 @@ npx bumpist-code@latest init
 Claude Code 쓰는 프로젝트에서 npx bumpist-code@latest init 한 줄 치면
 폴더 구조·테스트·커밋 규칙을 Claude가 알아서 지켜줌. 규칙 안 외워도 됨.
 이걸로 실서비스 MVP도 하나 완주해봤는데(re-pin이라고 수정요청 관리 툴) 꽤 쓸만해.
-시간 나면 한번 돌려보고 이상한 데 있으면 알려줘 👉 github.com/parksubeom/bumpist-fe-guide
+시간 나면 한번 돌려보고 이상한 데 있으면 알려줘 👉 github.com/parksubeom/bumpist-code
 ```
 
 **B. 정중 (선배·커뮤니티 슬랙 등):**
@@ -208,7 +208,7 @@ Claude Code로 프론트엔드 작업할 때 세션마다 구조·퀄리티가 �
 Next.js 트랙은 실서비스 MVP(re-pin) 부트스트랩을 완주하면서 검증했고,
 거기서 발견한 문제들을 v0.5.1에 반영했습니다.
 혹시 Claude Code 쓰실 일 있으면 한번 살펴봐 주시고, 피드백 주시면 감사히 반영하겠습니다.
-https://github.com/parksubeom/bumpist-fe-guide
+https://github.com/parksubeom/bumpist-code
 ```
 
 ---
@@ -254,7 +254,7 @@ https://github.com/parksubeom/bumpist-fe-guide
 - **travisvn/awesome-claude-skills** — fork + PR, "Community Skills → Collections & Libraries" 섹션:
 
   ```
-  [Bumpist Code](https://github.com/parksubeom/bumpist-fe-guide) - Frontend rules + Claude Code skills for Vue/React/Next.js (Feature-Sliced Design, TypeScript strict); one `npx bumpist-code init` wires the rules and 13 in-project skills into `.claude`, with bundled app templates for project bootstrap.
+  [Bumpist Code](https://github.com/parksubeom/bumpist-code) - Frontend rules + Claude Code skills for Vue/React/Next.js (Feature-Sliced Design, TypeScript strict); one `npx bumpist-code init` wires the rules and 13 in-project skills into `.claude`, with bundled app templates for project bootstrap.
   ```
 
 - **VoltAgent/awesome-agent-skills** — fork + PR, Community Skills 섹션. 위와 동일 엔트리(제출 전 그쪽 CONTRIBUTING.md 포맷 확인).
