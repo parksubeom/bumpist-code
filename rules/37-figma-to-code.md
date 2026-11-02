@@ -20,8 +20,8 @@
 ## 값 매핑 — 하드코딩하지 않는다
 
 <!-- rule: FIGMA-003 | severity: error | enforce: review -->
-- 색·간격·radius·타이포는 Figma 변수를 **우리 디자인 토큰**(`gen-tokens`가 만든 `tokens.css`,
-  예: `bg-bg-default`, `p-md`)에 매핑해 쓴다. 임의 hex/px를 박지 않는다(`rules/<fw>/code-style`).
+- 색·간격·radius·타이포는 Figma 변수를 **우리 디자인 토큰**(Bumpist 토큰의 `bg-surface`·`gap-stack`,
+  또는 `gen-tokens`가 만든 `tokens.css`의 `bg-bg-default`·`p-md`)에 매핑해 쓴다. 임의 hex/px를 박지 않는다(`rules/<fw>/code-style`).
 <!-- rule: FIGMA-004 | severity: error | enforce: review -->
 - Figma에 없는 값이 필요하면 임의로 만들지 말고 디자이너/토큰에 확인.
 

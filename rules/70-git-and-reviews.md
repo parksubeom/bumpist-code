@@ -28,7 +28,7 @@
 - 본문에 **무엇을·왜·어떻게 검증했는지** + 스크린샷/재현 절차(해당 시). 템플릿:
   [`docs/ai/pr-review-checklist.md`](../docs/ai/pr-review-checklist.md).
 <!-- rule: GIT-008 | severity: error | enforce: ci -->
-- CI(lint/type-check/test/build/size)가 초록이어야 머지.
+- CI의 모든 잡(verify·e2e, `rules/90`)이 초록이어야 머지.
 
 ## 리뷰
 

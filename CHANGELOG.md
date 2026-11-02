@@ -22,6 +22,18 @@
 - `rules/30-design.md`를 bumpist-design 디자인 원칙 UI-003~011 기준으로 다시 씀. 규칙마다 ID(UI-001, UI-003~011)를
   붙여 `rules.json`에 모으고, Bumpist 토큰 유틸 이름표를 더함. 이전 기본값(radius 6–8px, 1px 보더로 구역 구분,
   초록·노랑·빨강 의미색)은 새 원칙(모서리 12·16px, 여백으로 구분, 브랜드 색 밝기의 상태색)으로 바뀜.
+- 30-design과 어긋나던 규칙을 맞춤: 색에 `dark:`를 따로 붙이지 않음(REACT-007, VUE-009), 토큰 예시에 Bumpist 이름 추가
+  (FIGMA-003, VUE-010), 대비에 입력창 경계·포커스 링 3:1 추가(A11Y-012).
+- 서로 어긋나던 규칙을 맞춤: 재시도로 통과한 flaky 테스트도 고친다(CI-007), 머지 조건은 CI의 모든 잡(GIT-008),
+  React props 인라인을 Vue처럼 금지(REACT-003, warn → error), Next `page.tsx` import 규칙(NEXT-028, routing).
+- 문구 하드코딩 금지에 ID 추가(REACT-030, NEXT-044).
+
+### Fixed
+
+- Next 규칙의 사실 오류: `cache: 'no-store'` 표기(NEXT-034), next-intl 보간은 ICU 문법(NEXT-020), 레이아웃만으로
+  인증 가드하지 않기(NEXT-032).
+- `rules/50`의 lint-staged 대상(`*.{ts,mts,tsx,vue}`)을 실제 템플릿과 맞춤.
+- `build-rules-index.mjs`가 코드 안의 `**`까지 지워 제목이 깨지던 문제(TEST-006, NEXT-043).
 
 ## [0.5.1] - 2026-07-05
 

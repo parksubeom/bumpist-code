@@ -25,10 +25,11 @@ App Router는 **파일 기반 라우팅**이다. `app/` 아래 폴더 구조가 
 
 ## 규칙
 
-- `page.tsx`·`layout.tsx`는 **얇게** — FSD 슬라이스(widgets/features)를 import해 조립만
+- `page.tsx`·`layout.tsx`는 **얇게** — FSD 슬라이스(`page.tsx`는 `pageViews`)를 import해 조립만
   (`rules/next/project-structure`).
 <!-- rule: NEXT-031 | severity: error | enforce: review -->
 - 메타데이터는 `export const metadata` 또는 `generateMetadata`로. `<head>` 수동 조작 금지.
 - 링크·이동은 `next/link`·`next/navigation`(`rules/next/code-style`).
 <!-- rule: NEXT-032 | severity: error | enforce: review -->
-- 인증·리다이렉트 같은 경로 가드는 `middleware.ts` 또는 레이아웃/서버 컴포넌트에서.
+- 인증·리다이렉트 같은 경로 가드는 `middleware.ts` 또는 서버 컴포넌트에서. 레이아웃만으로 가드하지 않는다 —
+  레이아웃은 클라이언트 이동 때 다시 렌더되지 않으므로, 데이터를 읽는 페이지·서버 액션에서도 확인한다.

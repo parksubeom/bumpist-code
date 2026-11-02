@@ -11,8 +11,8 @@
 
 ## Props
 
-<!-- rule: REACT-003 | severity: warn | enforce: review -->
-- **Props는 `interface Props`로 정의**(인라인 지양). 구조분해 + 기본값.
+<!-- rule: REACT-003 | severity: error | enforce: review -->
+- **Props는 `interface Props`로 정의**(인라인 금지). 구조분해 + 기본값.
 
 ```tsx
 interface Props {
@@ -36,7 +36,7 @@ export function Button({ variant = 'primary', disabled = false, className }: Pro
 ## 스타일
 
 <!-- rule: REACT-007 | severity: error | enforce: review -->
-- **Tailwind 유틸리티 클래스만.** 컴포넌트 `<style>` 없음. 다크모드 `dark:`.
+- **Tailwind 유틸리티 클래스만.** 컴포넌트 `<style>` 없음. 다크모드는 시맨틱 토큰이 바꾸므로 색에 `dark:`를 따로 붙이지 않는다(`rules/30`).
 <!-- rule: REACT-008 | severity: error | enforce: review -->
 - 색·간격·타이포는 **디자인 토큰 유틸**(`bg-*`, `p-*`, `text-*`) 사용, 하드코딩 금지(`gen-tokens`).
 

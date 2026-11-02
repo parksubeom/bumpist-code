@@ -54,10 +54,10 @@ defineEmits<{ click: [event: MouseEvent] }>()
 <!-- rule: VUE-008 | severity: error | enforce: review -->
 - **Tailwind 유틸리티 클래스만.** 컴포넌트별 `<style>` 블록 금지. (→ `styling`은 이 문서에 통합)
 <!-- rule: VUE-009 | severity: error | enforce: lint,review | tool: prettier -->
-- 다크모드는 `dark:`. 전역 설정은 `app/styles/main.css`. 클래스 순서는 prettier가 정렬.
+- 다크모드는 시맨틱 토큰이 바꾸므로 색에 `dark:`를 따로 붙이지 않는다(`rules/30`). 전역 설정은 `app/styles/main.css`. 클래스 순서는 prettier가 정렬.
 <!-- rule: VUE-010 | severity: error | enforce: review -->
-- **디자인 토큰**: 색상·간격·radius·타이포는 하드코딩 대신 토큰 유틸(`bg-bg-default`, `p-md` 등)을
-  쓴다. 토큰은 `gen-tokens` 스킬이 `tokens.css`로 생성(생성 파일, 손대지 않음, `docs/adr/0010`).
+- **디자인 토큰**: 색상·간격·radius·타이포는 하드코딩 대신 토큰 유틸(Bumpist 토큰이면 `bg-surface`·`gap-stack`, `gen-tokens` 토큰이면
+  `bg-bg-default`·`p-md`)을 쓴다. 토큰은 `gen-tokens` 스킬이 `tokens.css`로 생성(생성 파일, 손대지 않음, `docs/adr/0010`).
 
 ## 사용자 문구
 
