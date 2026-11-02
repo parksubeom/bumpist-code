@@ -136,7 +136,7 @@
     },
     {
       "id": "A11Y-012",
-      "title": "텍스트 대비는 최소 WCAG AA(본문 4.5:1). Tailwind 색 조합 시 확인.",
+      "title": "텍스트 대비는 최소 WCAG AA(본문 4.5:1), 입력창 경계·포커스 링은 3:1. 토큰 색 조합으로 확인한다(rules/30).",
       "severity": "error",
       "enforcement": [
         "review"
@@ -401,7 +401,7 @@
     },
     {
       "id": "CI-007",
-      "title": "flaky 테스트는 재시도로 덮지 말고 원인을 해결한다. (Playwright는 CI에서 retries 2, forbidOnly, workers:1로 고정)",
+      "title": "flaky 테스트는 재시도로 덮지 말고 원인을 해결한다. Playwright는 CI에서 retries 2, forbidOnly, workers:1로 고정하지만, 재시도로 통과한 테스트(flaky 표시)도 원인을 찾아 고친다.",
       "severity": "error",
       "enforcement": [
         "review"
@@ -1017,7 +1017,7 @@
     },
     {
       "id": "FIGMA-003",
-      "title": "색·간격·radius·타이포는 Figma 변수를 우리 디자인 토큰(gen-tokens가 만든 tokens.css,",
+      "title": "색·간격·radius·타이포는 Figma 변수를 우리 디자인 토큰(Bumpist 토큰의 bg-surface·gap-stack,",
       "severity": "error",
       "enforcement": [
         "review"
@@ -1187,7 +1187,7 @@
     },
     {
       "id": "GIT-008",
-      "title": "CI(lint/type-check/test/build/size)가 초록이어야 머지.",
+      "title": "CI의 모든 잡(verify·e2e, rules/90)이 초록이어야 머지.",
       "severity": "error",
       "enforcement": [
         "ci"
@@ -1435,7 +1435,7 @@
       "status": "enforced",
       "file": "rules/next/i18n.md",
       "section": "로케일 라우팅",
-      "line": 25
+      "line": 28
     },
     {
       "id": "NEXT-017",
@@ -1447,7 +1447,7 @@
       "status": "enforced",
       "file": "rules/next/i18n.md",
       "section": "로케일 라우팅",
-      "line": 27
+      "line": 30
     },
     {
       "id": "NEXT-018",
@@ -1459,7 +1459,7 @@
       "status": "enforced",
       "file": "rules/next/i18n.md",
       "section": "메시지 구조",
-      "line": 32
+      "line": 35
     },
     {
       "id": "NEXT-019",
@@ -1471,11 +1471,11 @@
       "status": "enforced",
       "file": "rules/next/i18n.md",
       "section": "메시지 구조",
-      "line": 34
+      "line": 37
     },
     {
       "id": "NEXT-020",
-      "title": "기본 ko, 폴백 en. 복수형·보간({{count}})·날짜/숫자 Intl 활용.",
+      "title": "기본 ko, 폴백 en. 복수형·보간은 ICU 문법({count}, {count, plural, ...}), 날짜/숫자는 Intl 활용.",
       "severity": "error",
       "enforcement": [
         "review"
@@ -1483,7 +1483,7 @@
       "status": "enforced",
       "file": "rules/next/i18n.md",
       "section": "메시지 구조",
-      "line": 36
+      "line": 39
     },
     {
       "id": "NEXT-021",
@@ -1495,7 +1495,7 @@
       "status": "enforced",
       "file": "rules/next/i18n.md",
       "section": "전환",
-      "line": 41
+      "line": 44
     },
     {
       "id": "NEXT-022",
@@ -1572,7 +1572,7 @@
     },
     {
       "id": "NEXT-028",
-      "title": "import 방향(상위→하위만)·public API(index.ts) 규칙 유지. page.tsx는 슬라이스의 index.ts만 import.",
+      "title": "import 방향(상위→하위만)·public API(index.ts) 규칙 유지. page.tsx는 슬라이스의 index.ts만 import(서버 전용 함수는 예외, 아래).",
       "severity": "error",
       "enforcement": [
         "review"
@@ -1620,7 +1620,7 @@
     },
     {
       "id": "NEXT-032",
-      "title": "인증·리다이렉트 같은 경로 가드는 middleware.ts 또는 레이아웃/서버 컴포넌트에서.",
+      "title": "인증·리다이렉트 같은 경로 가드는 middleware.ts 또는 서버 컴포넌트에서. 레이아웃만으로 가드하지 않는다 —",
       "severity": "error",
       "enforcement": [
         "review"
@@ -1644,7 +1644,7 @@
     },
     {
       "id": "NEXT-034",
-      "title": "Next fetch 캐싱 옵션을 명시: cache: 'force-cache'(정적) / no-store'(매요청) / next: { revalidate: N }.",
+      "title": "Next fetch 캐싱 옵션을 명시: cache: 'force-cache'(정적) / cache: 'no-store'(매요청) / next: { revalidate: N }.",
       "severity": "error",
       "enforcement": [
         "review"
@@ -1752,7 +1752,7 @@
     },
     {
       "id": "NEXT-043",
-      "title": "외부로 노출할 HTTP 엔드포인트가 필요하면 Route Handler(app/api//route.ts).",
+      "title": "외부로 노출할 HTTP 엔드포인트가 필요하면 Route Handler(app/api/**/route.ts).",
       "severity": "error",
       "enforcement": [
         "review"
@@ -1761,6 +1761,18 @@
       "file": "rules/next/state-and-data.md",
       "section": "변경(mutation) — Server Action 우선",
       "line": 39
+    },
+    {
+      "id": "NEXT-044",
+      "title": "사용자에게 보이는 문구는 메시지 키로 t()에서 가져온다. 서버·클라 컴포넌트 모두 문자열을 직접 쓰지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/i18n.md",
+      "section": "문구는 하드코딩하지 않는다",
+      "line": 10
     },
     {
       "id": "REACT-001",
@@ -1788,8 +1800,8 @@
     },
     {
       "id": "REACT-003",
-      "title": "Props는 interface Props로 정의(인라인 지양). 구조분해 + 기본값.",
-      "severity": "warn",
+      "title": "Props는 interface Props로 정의(인라인 금지). 구조분해 + 기본값.",
+      "severity": "error",
       "enforcement": [
         "review"
       ],
@@ -1836,7 +1848,7 @@
     },
     {
       "id": "REACT-007",
-      "title": "Tailwind 유틸리티 클래스만. 컴포넌트 <style> 없음. 다크모드 dark:.",
+      "title": "Tailwind 유틸리티 클래스만. 컴포넌트 <style> 없음. 다크모드는 시맨틱 토큰이 바꾸므로 색에 dark:를 따로 붙이지 않는다(rules/30).",
       "severity": "error",
       "enforcement": [
         "review"
@@ -1976,7 +1988,7 @@
       "status": "enforced",
       "file": "rules/react/i18n.md",
       "section": "메시지 구조",
-      "line": 20
+      "line": 23
     },
     {
       "id": "REACT-019",
@@ -1988,7 +2000,7 @@
       "status": "enforced",
       "file": "rules/react/i18n.md",
       "section": "메시지 구조",
-      "line": 22
+      "line": 25
     },
     {
       "id": "REACT-020",
@@ -2000,7 +2012,7 @@
       "status": "enforced",
       "file": "rules/react/i18n.md",
       "section": "메시지 구조",
-      "line": 25
+      "line": 28
     },
     {
       "id": "REACT-021",
@@ -2012,7 +2024,7 @@
       "status": "enforced",
       "file": "rules/react/i18n.md",
       "section": "복수형·변수·서식",
-      "line": 30
+      "line": 33
     },
     {
       "id": "REACT-022",
@@ -2024,7 +2036,7 @@
       "status": "enforced",
       "file": "rules/react/i18n.md",
       "section": "전환·등록",
-      "line": 35
+      "line": 38
     },
     {
       "id": "REACT-023",
@@ -2036,7 +2048,7 @@
       "status": "enforced",
       "file": "rules/react/i18n.md",
       "section": "테스트",
-      "line": 41
+      "line": 44
     },
     {
       "id": "REACT-024",
@@ -2109,6 +2121,18 @@
       "file": "rules/react/state-and-data.md",
       "section": "서버 상태 — TanStack React Query",
       "line": 44
+    },
+    {
+      "id": "REACT-030",
+      "title": "사용자에게 보이는 문구는 메시지 키로 t()에서 가져온다. 컴포넌트에 문자열을 직접 쓰지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/i18n.md",
+      "section": "문구는 하드코딩하지 않는다",
+      "line": 10
     },
     {
       "id": "SEC-001",
@@ -2304,7 +2328,7 @@
     },
     {
       "id": "TEST-006",
-      "title": "커버리지 include는 src//*.{ts,tsx,vue}, 생성/부트스트랩 파일(schema.d.ts, main.ts(x))은 제외.",
+      "title": "커버리지 include는 src/**/*.{ts,tsx,vue}, 생성/부트스트랩 파일(schema.d.ts, main.ts(x))은 제외.",
       "severity": "error",
       "enforcement": [
         "review"
@@ -2676,7 +2700,7 @@
     },
     {
       "id": "VUE-009",
-      "title": "다크모드는 dark:. 전역 설정은 app/styles/main.css. 클래스 순서는 prettier가 정렬.",
+      "title": "다크모드는 시맨틱 토큰이 바꾸므로 색에 dark:를 따로 붙이지 않는다(rules/30). 전역 설정은 app/styles/main.css. 클래스 순서는 prettier가 정렬.",
       "severity": "error",
       "enforcement": [
         "lint",
@@ -2690,7 +2714,7 @@
     },
     {
       "id": "VUE-010",
-      "title": "디자인 토큰: 색상·간격·radius·타이포는 하드코딩 대신 토큰 유틸(bg-bg-default, p-md 등)을",
+      "title": "디자인 토큰: 색상·간격·radius·타이포는 하드코딩 대신 토큰 유틸(Bumpist 토큰이면 bg-surface·gap-stack, gen-tokens 토큰이면",
       "severity": "error",
       "enforcement": [
         "review"

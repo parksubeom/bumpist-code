@@ -8,7 +8,7 @@
 - 첫 렌더에 필요한 데이터는 **서버 컴포넌트에서 직접 `await fetch()`/DB 조회**로 가져온다. 클라이언트로
   내려서 다시 받지 않는다(워터폴·번들 증가 방지).
 <!-- rule: NEXT-034 | severity: error | enforce: review -->
-- Next `fetch` 캐싱 옵션을 명시: `cache: 'force-cache'`(정적) / `no-store'`(매요청) / `next: { revalidate: N }`.
+- Next `fetch` 캐싱 옵션을 명시: `cache: 'force-cache'`(정적) / `cache: 'no-store'`(매요청) / `next: { revalidate: N }`.
 <!-- rule: NEXT-035 | severity: error | enforce: review -->
 - 서버에서 받은 데이터는 **props로 클라이언트 컴포넌트에 내려준다.**
 

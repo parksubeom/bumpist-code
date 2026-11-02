@@ -61,7 +61,7 @@ src/
 ## 경계는 그대로 강제
 
 <!-- rule: NEXT-028 | severity: error | enforce: review -->
-- import 방향(상위→하위만)·public API(`index.ts`) 규칙 유지. `page.tsx`는 슬라이스의 `index.ts`만 import.
+- import 방향(상위→하위만)·public API(`index.ts`) 규칙 유지. `page.tsx`는 슬라이스의 `index.ts`만 import(서버 전용 함수는 예외, 아래).
 <!-- rule: NEXT-029 | severity: error | enforce: review -->
 - 서버/클라 경계는 구조와 별개 축이다 — `'use client'`는 잎에서만(`rules/next/code-style`).
   서버 전용 모듈(secret 키 클라이언트 등)은 `import 'server-only'`로 가드하고, 클라 안전한 것만

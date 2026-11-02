@@ -41,7 +41,7 @@
 
 ```
 1) pnpm run test          # 유닛/컴포넌트 (Vitest, 소스 옆 *.spec.ts)
-2) pnpm run type-check     # vue-tsc, 타입 안전성
+2) pnpm run type-check     # vue-tsc(Vue) / tsc(React·Next), 타입 안전성
 3) pnpm run lint           # oxlint → eslint (import 위생 + FSD 경계)
 4) pnpm run build          # 타입체크 + 프로덕션 빌드 통과
 5) pnpm run size           # 번들 예산 (해당 앱에 영향 시)
@@ -83,7 +83,7 @@
 | `commit-msg` | 메시지 작성 직후 | `npx --no-install commitlint --edit` | Conventional Commits 형식·타입 검증. 규약 위반 메시지 차단 |
 | `pre-push` | `git push` 직전 | `npm run type-check` | 타입 오류가 있는 코드가 원격에 올라가지 않게 차단(로컬에서 CI 앞단 방어) |
 
-- `lint-staged` 설정(`.lintstagedrc.json`): `*.{ts,vue}`는 oxlint→eslint→prettier, 그 외는 prettier.
+- `lint-staged` 설정(`.lintstagedrc.json`): `*.{ts,mts,tsx,vue}`는 oxlint→eslint→prettier, 그 외는 prettier.
   **전체가 아니라 변경 파일만** 대상이라 빠르다.
 - `commit-msg`가 막는 예: `수정함`(타입 없음), `feature: ...`(허용 안 되는 타입) → 실패.
   `feat: add user avatar` → 통과.

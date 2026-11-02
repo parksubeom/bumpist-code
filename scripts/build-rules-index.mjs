@@ -44,7 +44,8 @@ for (const file of files.sort()) {
     const raw = (lines[j] ?? "").replace(INLINE, "").trim();
     let title = raw;
     if (raw.startsWith("|")) title = raw.split("|").map((c) => c.trim()).filter(Boolean).join(" — ");
-    title = title.replace(/^([-*]|\d+\.)\s+/, "").replace(/\*\*/g, "").replace(/`/g, "");
+    // Drop bold markers outside code spans (so `src/**/*.ts` survives), then the backticks.
+    title = title.replace(/^([-*]|\d+\.)\s+/, "").split("`").map((s, k) => (k % 2 ? s : s.replace(/\*\*/g, ""))).join("");
     const where = `${rel}:${i + 1}`;
     if (!ID.test(id)) errors.push(`${where} bad id ${id}`);
     if (seen.has(id)) errors.push(`${where} duplicate id ${id} (first at ${seen.get(id)})`);
