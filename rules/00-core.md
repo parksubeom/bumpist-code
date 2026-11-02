@@ -12,12 +12,19 @@
 
 **공통 (Vue·React·Next.js 동일)**
 
+<!-- rule: CORE-019 | severity: error | enforce: review -->
 - **TypeScript strict** · 빌드는 **Vite**(Vue·React) / **Next 자체 빌드**(Next.js, App Router)
+<!-- rule: CORE-020 | severity: error | enforce: review -->
 - 서버 상태: **TanStack Query** · 타입세이프 API: **openapi-typescript** + **openapi-fetch**
+<!-- rule: CORE-021 | severity: error | enforce: review -->
 - 스타일: **Tailwind CSS v4** + `cva`/`cn` · 디자인 토큰(Token Studio → `gen-tokens`)
+<!-- rule: CORE-022 | severity: error | enforce: review -->
 - 아키텍처: **Feature-Sliced Design**
+<!-- rule: CORE-023 | severity: error | enforce: review -->
 - 모노레포: **pnpm workspace + Turborepo** (`apps/*`, `packages/*`)
+<!-- rule: CORE-024 | severity: error | enforce: review -->
 - 테스트: **Vitest** · **Playwright** · **Storybook**
+<!-- rule: CORE-025 | severity: error | enforce: review -->
 - 품질: **oxlint** + **ESLint**(import-x + boundaries) · **Prettier** · **commitlint** + **husky**
 
 **프레임워크별**
@@ -33,10 +40,14 @@
 
 ## 작업 기본 원칙
 
+<!-- rule: CORE-026 | severity: error | enforce: review -->
 1. 규칙(`rules/`)이 SSoT다. 규칙과 코드/스킬이 어긋나면 규칙을 따르거나, 규칙 변경을 먼저 합의한다.
 2. 새 패키지·설정·구조는 **명시 요청 없이 임의로 추가하지 않는다** (→ `10-guardrails.md`).
+<!-- rule: CORE-027 | severity: error | enforce: review -->
 3. 포매터/린터와 싸우지 않는다. import 순서·클래스 정렬은 도구가 자동 처리한다.
+<!-- rule: CORE-028 | severity: error | enforce: review -->
 4. 서버 데이터는 TanStack Query, 클라이언트 상태만 스토어(Pinia/Zustand). 둘을 섞지 않는다.
+<!-- rule: CORE-029 | severity: error | enforce: review -->
 5. 컴포넌트/슬라이스 추가는 항상 해당 스킬 절차를 따라 동일 품질을 유지한다.
 
 ## 명령어 (모노레포 루트)

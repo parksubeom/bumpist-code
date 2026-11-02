@@ -11,14 +11,19 @@ export const useXStore = create<XState>((set, get) => ({
 }))
 ```
 
+<!-- rule: REACT-024 | severity: error | enforce: review -->
 - 컴포넌트에서는 **selector로 필요한 값만 구독**: `const items = useXStore((s) => s.items)`.
+<!-- rule: REACT-025 | severity: error | enforce: review -->
 - **서버 데이터를 Zustand에 캐싱하지 않는다** — 그건 React Query의 몫.
+<!-- rule: REACT-026 | severity: error | enforce: review -->
 - 스토어는 슬라이스 `model/` 세그먼트에.
 
 ## 서버 상태 — TanStack React Query
 
+<!-- rule: REACT-027 | severity: error | enforce: review -->
 - `@tanstack/react-query`의 `useQuery`/`useMutation`. `apiClient.GET('/path')` → `{ data, error }`
   구조분해, 실패 시 `throw error`.
+<!-- rule: REACT-028 | severity: error | enforce: review -->
 - **쿼리 키는 훅과 colocation하고 export**. 타입은 openapi 생성 타입 사용(`rules/40`).
 
 ```ts
@@ -35,4 +40,5 @@ export function useUsersQuery() {
 }
 ```
 
+<!-- rule: REACT-029 | severity: error | enforce: review -->
 - 훅은 슬라이스 `api/` 세그먼트에 두고 `index.ts`로 export. `QueryClientProvider`는 `app`에서 1회 등록.

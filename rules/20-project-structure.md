@@ -30,8 +30,10 @@ app → pages → widgets → features → entities → shared
 > ⚠️ **Next.js 트랙 예외:** Next는 `src/pages`를 Pages Router로 예약하므로 화면 레이어 이름을
 > **`pageViews`**로 쓴다(서열은 동일). `rules/next/project-structure` 참조. Vue·React(Vite)는 `pages` 그대로.
 
+<!-- rule: ARCH-001 | severity: error | enforce: lint | tool: eslint-plugin-boundaries -->
 - **규칙**: 한 계층은 자기 자신과 **엄격히 하위인** 계층만 import할 수 있다.
   예) `features`는 `entities`/`shared`는 되지만 `pages`는 절대 안 됨.
+<!-- rule: ARCH-002 | severity: error | enforce: review -->
 - `eslint-plugin-boundaries`가 빌드를 실패시켜 강제한다. 위반은 억제하지 말고 구조를 고친다.
 
 각 계층 역할:
@@ -56,7 +58,9 @@ features/<name>/
 
 (FSD 계층·경계 규칙은 프레임워크 무관. 세그먼트 내부 구현 규칙은 `rules/vue/*` 또는 `rules/react/*`.)
 
+<!-- rule: ARCH-003 | severity: error | enforce: review -->
 - 슬라이스 간 import는 항상 `index.ts`를 통해서. 깊은 경로 직접 접근 금지.
+<!-- rule: ARCH-004 | severity: error | enforce: review -->
 - `@/` alias 사용 (`import { BaseButton } from '@/shared/ui'`).
 
 ## 관심사 분리 판단 기준 (Layer × Slice × Segment)
@@ -85,13 +89,18 @@ features/<name>/
 
 세그먼트 위치 못지않게 자주 막히는 게 "이걸 새 슬라이스로 뺄까, 기존에 얹을까"다. 기준:
 
+<!-- rule: ARCH-005 | severity: error | enforce: review -->
 - **도메인 명사 하나 = 슬라이스 하나.** `cart` · `product` · `coupon`처럼 비즈니스 명사가 떠오를 때만
   슬라이스를 만든다. 명사가 안 나오면 아직 슬라이스가 아니다 → 기존 슬라이스에 얹는다.
+<!-- rule: ARCH-006 | severity: error | enforce: review -->
 - **화면이 하나 늘었다고 만들지 않는다.** "이 도메인만의 데이터·계산·액션"이 생길 때 만든다.
+<!-- rule: ARCH-007 | severity: error | enforce: review -->
 - **entity vs feature 경계.** `entities`는 데이터·순수 계산·표현만(**사용자 액션 금지**).
   담기·삭제·제출 같은 사용자 액션은 `features`. 한 액션이 두 곳 이상에서 재사용되면 `features`로 승격.
+<!-- rule: ARCH-008 | severity: error | enforce: review -->
 - **widget은 그리기보다 조립.** 폼 상태·유효성 같은 로직은 `features`로 내리고, widget이 껍데기에
   가까워도 정상이다(조립이 곧 widget의 일).
+<!-- rule: ARCH-009 | severity: error | enforce: review -->
 - **병합.** 두 슬라이스가 늘 함께만 바뀌고 따로 재사용된 적이 없으면 하나로 합친다(질문 5의 응집도와 같은 잣대).
 
 ### 다섯 질문으로 세부 위치 확정

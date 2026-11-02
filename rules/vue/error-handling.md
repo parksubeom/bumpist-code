@@ -6,20 +6,27 @@
 
 ## 에러 소스
 
+<!-- rule: VUE-011 | severity: error | enforce: review -->
 - **API 에러** — Vue Query 훅에서 `throw error`. 화면은 `isError`/`error`로 분기.
+<!-- rule: VUE-012 | severity: error | enforce: review -->
 - **에러 envelope** — 백엔드 규약에 맞춘 형태를 `shared/api`에서 단일 파싱. 컴포넌트가 raw 응답을
   직접 뜯지 않는다.
 
 ## 토스트 규약 (한 곳에서만 발생)
 
+<!-- rule: VUE-013 | severity: error | enforce: review -->
 - 에러 토스트는 **한 레이어만** 소유한다 — 중앙 인터셉터 **또는** 호출부 catch 중 하나.
   둘 다에서 토스트하면 중복 발생(테스트/UX 모두 깨짐).
+<!-- rule: VUE-014 | severity: error | enforce: review -->
 - 성공/에러 메시지는 레지스트리(SSoT)에서 해석. 메시지 문자열을 컴포넌트에 흩뿌리지 않는다.
+<!-- rule: VUE-015 | severity: error | enforce: review -->
 - 메시지는 `string | string[]` 가능성을 항상 가정(검증 에러 배열).
 
 ## 폼/입력 검증
 
+<!-- rule: VUE-016 | severity: error | enforce: review -->
 - 서버 검증 응답을 신뢰하되, 즉시 UX는 클라이언트 검증으로 보완.
+<!-- rule: VUE-017 | severity: error | enforce: review -->
 - 파괴적(비가역) 액션 전에는 확인 UI를 둔다.
 
 ## 템플릿
