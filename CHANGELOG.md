@@ -12,6 +12,12 @@
 
 ## [Unreleased]
 
+### Changed
+
+- `rules/30-design.md`를 bumpist-design 디자인 원칙 UI-003~011 기준으로 다시 씀. 규칙마다 ID(UI-001, UI-003~011)를
+  붙여 `rules.json`에 모으고, Bumpist 토큰 유틸 이름표를 더함. 이전 기본값(radius 6–8px, 1px 보더로 구역 구분,
+  초록·노랑·빨강 의미색)은 새 원칙(모서리 12·16px, 여백으로 구분, 브랜드 색 밝기의 상태색)으로 바뀜.
+
 ## [0.5.1] - 2026-07-05
 
 Next 트랙 **실전 검증** 릴리스. 실서비스 MVP([re-pin](https://github.com/parksubeom/re-pin))를

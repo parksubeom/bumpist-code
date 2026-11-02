@@ -221,6 +221,130 @@
       "file": "rules/10-guardrails.md",
       "section": "2. 금지 항목",
       "line": 40
+    },
+    {
+      "id": "UI-001",
+      "title": "색은 토큰으로만 쓴다. #hex·rgb() 같은 색 값이나 Tailwind 기본 팔레트(bg-gray-100, text-red-500)를 코드에 직접 쓰지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 16
+    },
+    {
+      "id": "UI-003",
+      "title": "순백과 순흑을 쓰지 않는다. 배경은 살짝 톤이 있는 밝은 색이고, 가장 진한 글자도 아주 진한 남색이나 회색이다.",
+      "severity": "error",
+      "enforcement": [
+        "build",
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 18
+    },
+    {
+      "id": "UI-004",
+      "title": "구역은 칸막이 선이 아니라 여백과 글자 크기로 나눈다. 구역 사이에 border-b·divide-*·<hr>를 긋지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 21
+    },
+    {
+      "id": "UI-005",
+      "title": "모서리는 컨트롤과 컨테이너 두 가지뿐이다. 버튼·입력창 같은 컨트롤은 rounded-control, 카드·시트 같은 컨테이너는",
+      "severity": "error",
+      "enforcement": [
+        "build",
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 25
+    },
+    {
+      "id": "UI-006",
+      "title": "요소 사이를 넉넉히 띄운다. 소비자형은 최소 24px, 작업 공간형은 최소 16px이다. 요소 사이는 gap-stack,",
+      "severity": "error",
+      "enforcement": [
+        "build",
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 28
+    },
+    {
+      "id": "UI-007",
+      "title": "소비자형은 휴대폰 화면부터 설계한다. 기본 스타일을 가장 좁은 화면에 맞춰 쓰고 sm:·md:·lg:로 넓힌다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 31
+    },
+    {
+      "id": "UI-008",
+      "title": "소비자형에서는 흔한 관리자 화면 틀을 쓰지 않는다. 왼쪽 메뉴와 위쪽 메뉴를 함께 두는 레이아웃을 쓰지 않는다. 작업 공간형은 예외다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 34
+    },
+    {
+      "id": "UI-009",
+      "title": "아이콘을 상자에 가두거나 의미 없이 늘어놓지 않는다. 아이콘에 네모·동그라미 배경 칸을 씌우지 않고,",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 36
+    },
+    {
+      "id": "UI-010",
+      "title": "성공·주의·오류를 신호등 색으로 보여 주지 않는다. 초록·노랑·빨강 원색 대신 브랜드 색의 밝기 차이인",
+      "severity": "error",
+      "enforcement": [
+        "build",
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 39
+    },
+    {
+      "id": "UI-011",
+      "title": "부품 목록에 없는 임시 부품은 한도 안에서만 만든다. 한도 값과 세는 방법은 bumpist-design 부품 목록(C2, v0.1)과 함께 정한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "proposed",
+      "file": "rules/30-design.md",
+      "section": "원칙",
+      "line": 42
     }
   ]
 }
