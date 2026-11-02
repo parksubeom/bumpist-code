@@ -4,24 +4,35 @@
 
 ## 테스트 3층
 
+<!-- rule: TEST-001 | severity: error | enforce: review -->
 - **유닛/컴포넌트** — Vitest. 컴포넌트 렌더 도구는 프레임워크별: **Vue = `@vue/test-utils`,
   React = React Testing Library**. 스펙은 소스 옆 `*.spec.ts(x)`.
+<!-- rule: TEST-002 | severity: error | enforce: review -->
 - **E2E** — Playwright. 스펙은 `e2e/` (Vitest는 무시). build 후 preview 서빙.
+<!-- rule: TEST-003 | severity: error | enforce: review -->
 - **컴포넌트 문서/개발** — Storybook. 스토리 `title`은 FSD 경로(예: `shared/ui/BaseButton`).
 
 규칙:
 
+<!-- rule: TEST-004 | severity: error | enforce: review -->
 - 신규 shared/feature 컴포넌트는 스펙 + 스토리를 **함께** 제공.
+<!-- rule: TEST-005 | severity: error | enforce: review -->
 - 컴포넌트 테스트는 렌더/prop 분기/이벤트 + 외부 class의 tailwind-merge 충돌 해소까지 커버.
   (Vue는 `mount`, React는 `render`+`screen`. 층 선택·패턴은 `write-test` 스킬)
+<!-- rule: TEST-006 | severity: error | enforce: review -->
 - 커버리지 include는 `src/**/*.{ts,tsx,vue}`, 생성/부트스트랩 파일(`schema.d.ts`, `main.ts(x)`)은 제외.
+<!-- rule: TEST-007 | severity: error | enforce: review -->
 - **실패 테스트를 삭제/비활성화로 해결하지 않는다** (→ `10-guardrails.md`).
 
 ## 품질 게이트 (자동 강제)
 
+<!-- rule: TEST-008 | severity: error | enforce: lint | tool: oxlint -->
 - **oxlint** `correctness: error` — 빠른 1차 게이트.
+<!-- rule: TEST-009 | severity: error | enforce: lint,review | tool: eslint-plugin-import-x,eslint-plugin-boundaries -->
 - **ESLint** — import 위생(`import-x`) + FSD 경계(`boundaries`). 위반 억제 금지.
+<!-- rule: TEST-010 | severity: error | enforce: lint,review | tool: prettier -->
 - **Prettier** (+ tailwind 플러그인) — 포맷·클래스 순서 자동. 도구와 싸우지 않는다.
+<!-- rule: TEST-011 | severity: error | enforce: ci,review | tool: size-limit -->
 - **size-limit** — 번들 예산(앱 JS 100kB / CSS 15kB gzip). 초과 시 원인 규명.
 
 ## 작업 후 검증 절차 (runbook)
@@ -45,9 +56,13 @@
 
 **어떤 테스트를 쓰나:**
 
+<!-- rule: TEST-012 | severity: error | enforce: review -->
 - 로직/유틸/스토어/컴포넌트 동작 → **유닛/컴포넌트(Vitest)**.
+<!-- rule: TEST-013 | severity: error | enforce: review -->
 - 파괴적 가드(자동 삭제·저장 등) 변경 → **회귀 스펙 필수** + 반대 방향(안티 가설) 케이스.
+<!-- rule: TEST-014 | severity: error | enforce: review -->
 - 라우팅·인증·다화면 플로우 → **E2E(Playwright)**.
+<!-- rule: TEST-015 | severity: error | enforce: review -->
 - 단순 className/문서 변경 → 회귀 스펙 비용 > 가치면 스킵하되 **커밋 본문에 사유 명시**.
 
 **보고 원칙:** "spec PASS = 검증 완료"로 단정하지 않는다. 검증된 영역 / 미검증 영역(end-to-end
@@ -75,6 +90,7 @@
 
 **정책:**
 
+<!-- rule: TEST-016 | severity: error | enforce: review -->
 - **`git commit --no-verify`(-n)로 훅 우회 금지.** 훅 실패는 무시가 아니라 원인 해결로 대응한다.
 - 훅은 **로컬 1차 방어선**일 뿐이다. 최종 강제는 CI(lint/type-check/test/build/size)가 한다 —
   훅을 우회해도 PR CI에서 막힌다(→ `70-git-and-reviews.md`).
@@ -87,6 +103,7 @@
 
 ## 커밋
 
+<!-- rule: TEST-017 | severity: error | enforce: lint | tool: commitlint -->
 - **Conventional Commits** — commit-msg 훅에서 commitlint 강제.
   허용 타입: `feat fix docs style refactor perf test build ci chore revert`.
 - **pre-commit** — lint-staged(스테이징 파일에 oxlint→eslint→prettier).

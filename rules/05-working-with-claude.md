@@ -7,28 +7,37 @@
 
 ## 1. 작업 흐름
 
+<!-- rule: CORE-030 | severity: error | enforce: review -->
 1. **범위 확인 먼저** — 요청이 모호하거나 영향 범위가 크면(3파일+ / 설정·구조 변경 / 비가역 작업)
    착수 전에 이해한 범위를 한 줄로 확인한다. 한 메시지에 여러 요구가 묶이면 "명시 요구 N개 +
    부수 맥락 M개"로 분해해 확인.
+<!-- rule: CORE-031 | severity: error | enforce: review -->
 2. **계획 → 실행** — 다단계·다파일 작업은 계획을 먼저 제시(무엇을·왜·어디를). 승인 후 실행.
+<!-- rule: CORE-032 | severity: error | enforce: review -->
 3. **확정되면 실행** — 명백한 기본값이 있는 선택은 되묻지 말고 진행하되 무엇을 했는지 밝힌다.
 
 ## 2. 가드레일 준수
 
+<!-- rule: CORE-033 | severity: error | enforce: review -->
 - `rules/10-guardrails.md`의 금지 항목은 절대 우선. 범위 밖 변경·임의 패키지·설정 변경·비가역
   작업은 사유 설명 + 승인 후에만.
 - 보호 브랜치 직접 커밋/푸시 금지(`rules/70`). 보안 정보 하드코딩 금지(`rules/80`).
 
 ## 3. 검증과 정직한 보고
 
+<!-- rule: CORE-034 | severity: error | enforce: review -->
 - **테스트/타입체크 결과를 있는 그대로 보고**한다. 실패는 출력과 함께 명시, 스킵한 단계는 스킵했다고 말한다.
+<!-- rule: CORE-035 | severity: error | enforce: review -->
 - "spec PASS = 검증 완료"로 단정하지 않는다. **검증된 영역 / 미검증 영역(end-to-end 등) / 추가
   검증 비용**을 분리해 보고하고, ROI 높은 다음 검증을 추천한다.
+<!-- rule: CORE-036 | severity: error | enforce: review -->
 - 가설 기반 수정은 가설이 틀리면 부분 복원보다 **즉시 revert**하고, 그 가설로 추가한 스펙도 함께 제거한다.
 
 ## 4. 코드 일관성
 
+<!-- rule: CORE-037 | severity: error | enforce: review -->
 - 주변 코드의 스타일·네이밍·주석 밀도를 따른다. 새 패턴을 임의 도입하지 않는다.
+<!-- rule: CORE-038 | severity: error | enforce: review -->
 - 파일/코드 위치는 `file:line`으로 참조해 리뷰가 쉽게 한다.
 
 ## 5. 기획자/비개발자 커뮤니케이션

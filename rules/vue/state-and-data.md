@@ -15,13 +15,17 @@ export const useXStore = defineStore('x', () => {
 })
 ```
 
+<!-- rule: VUE-029 | severity: error | enforce: review -->
 - **서버 데이터를 Pinia에 캐싱하지 않는다** — 그건 Vue Query의 몫.
+<!-- rule: VUE-030 | severity: error | enforce: review -->
 - 스토어는 슬라이스 `model/` 세그먼트에.
 
 ## 서버 상태 — TanStack Vue Query
 
+<!-- rule: VUE-031 | severity: error | enforce: review -->
 - `@tanstack/vue-query`의 `useQuery`/`useMutation`. `apiClient.GET('/path')` → `{ data, error }`
   구조분해, 실패 시 `throw error`, 성공 시 `data`.
+<!-- rule: VUE-032 | severity: error | enforce: review -->
 - **쿼리 키는 훅과 colocation하고 export**. 타입은 openapi 생성 타입 사용(`rules/40`).
 
 ```ts
@@ -38,4 +42,5 @@ export function useUsersQuery() {
 }
 ```
 
+<!-- rule: VUE-033 | severity: error | enforce: review -->
 - 훅은 슬라이스 `api/` 세그먼트에 두고 `index.ts`로 export. 컴포넌트에서 `useI18n`으로 문구는 별도(`vue/i18n`).

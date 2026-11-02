@@ -12,6 +12,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- 모든 규칙 파일에 규칙 ID 표시를 붙여 `rules.json`에 246개가 모임(CORE·ARCH·UI·A11Y·FIGMA·API·TEST·GIT·SEC·CI·NEXT·REACT·VUE).
+  문장은 바꾸지 않고 보이지 않는 주석만 더함.
+
 ### Changed
 
 - `rules/30-design.md`를 bumpist-design 디자인 원칙 UI-003~011 기준으로 다시 씀. 규칙마다 ID(UI-001, UI-003~011)를

@@ -20,12 +20,15 @@ App Router는 **파일 기반 라우팅**이다. `app/` 아래 폴더 구조가 
 - **동적 세그먼트**: `[id]`, 캐치올 `[...slug]`, 옵셔널 `[[...slug]]`.
 - **라우트 그룹**: `(group)` — URL에 안 들어가고 레이아웃/구획만 나눔.
 - **프라이빗 폴더**: `_folder` — 라우팅에서 제외(코드 보관용).
+<!-- rule: NEXT-030 | severity: error | enforce: review -->
 - 병렬(`@slot`)·인터셉트(`(.)`) 라우트는 필요할 때만(모달 등). 남용 금지.
 
 ## 규칙
 
 - `page.tsx`·`layout.tsx`는 **얇게** — FSD 슬라이스(widgets/features)를 import해 조립만
   (`rules/next/project-structure`).
+<!-- rule: NEXT-031 | severity: error | enforce: review -->
 - 메타데이터는 `export const metadata` 또는 `generateMetadata`로. `<head>` 수동 조작 금지.
 - 링크·이동은 `next/link`·`next/navigation`(`rules/next/code-style`).
+<!-- rule: NEXT-032 | severity: error | enforce: review -->
 - 인증·리다이렉트 같은 경로 가드는 `middleware.ts` 또는 레이아웃/서버 컴포넌트에서.

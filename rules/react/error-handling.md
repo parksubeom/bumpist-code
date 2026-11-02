@@ -4,17 +4,23 @@
 
 ## 에러 소스
 
+<!-- rule: REACT-012 | severity: error | enforce: review -->
 - **API 에러** — React Query 훅에서 `throw`(queryFn). 화면은 `isError`/`error`로 분기.
+<!-- rule: REACT-013 | severity: error | enforce: review -->
 - **렌더 에러** — **Error Boundary**로 화면 단위로 잡아 폴백 UI를 보여준다(앱이 통째로 죽지 않게).
+<!-- rule: REACT-014 | severity: error | enforce: review -->
 - **에러 envelope** — 백엔드 규약에 맞춘 파싱을 `shared/api`에서 단일 처리. 컴포넌트가 raw 응답을 직접 뜯지 않는다.
 
 ## 토스트 규약 (한 곳에서만)
 
+<!-- rule: REACT-015 | severity: error | enforce: review -->
 - 에러 토스트는 **한 레이어만** 소유한다 — 중앙 인터셉터 **또는** 호출부 중 하나. 둘 다 하면 중복.
+<!-- rule: REACT-016 | severity: error | enforce: review -->
 - 성공/에러 메시지는 레지스트리(SSoT)에서 해석. 메시지는 `string | string[]` 가능성 가정.
 
 ## 폼·파괴적 액션
 
+<!-- rule: REACT-017 | severity: error | enforce: review -->
 - 서버 검증을 신뢰하되 즉시 UX는 클라이언트 검증으로 보완. 파괴적(비가역) 액션 전 확인 UI.
 
 ## 템플릿

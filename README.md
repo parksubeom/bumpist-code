@@ -134,7 +134,7 @@ flowchart LR
 
 - `node scripts/build-rules-index.mjs`가 번호를 모아 [`rules.json`](https://parksubeom.github.io/bumpist-code/rules.json)을 만들어요. 다른 도구는 이 파일로 규칙을 읽어요.
 - 번호만 고치고 `rules.json`을 다시 만들지 않으면 자동 검사(`rules-index`)가 막아요.
-- 지금은 `10-guardrails`의 규칙 18개(CORE-001부터 CORE-018까지)와 `30-design`의 디자인 원칙(UI-001, UI-003부터 UI-011까지)에 번호가 붙었어요. 나머지는 차례로 붙이는 중이고, 방법은 [docs/rule-ids.md](./docs/rule-ids.md)에 있어요.
+- 지금은 모든 규칙 파일의 규칙 246개에 번호가 붙어 있어요. 새 규칙에 번호를 붙이는 법은 [docs/rule-ids.md](./docs/rule-ids.md)에 있어요.
 
 </details>
 

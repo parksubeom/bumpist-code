@@ -3,6 +3,451 @@
   "version": "0.5.1",
   "rules": [
     {
+      "id": "A11Y-001",
+      "title": "역할에 맞는 네이티브 요소를 쓴다: 버튼은 <button>, 링크는 <a>, 목록은 <ul>/<li>,",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "시맨틱 우선",
+      "line": 11
+    },
+    {
+      "id": "A11Y-002",
+      "title": "ARIA는 네이티브로 표현이 안 될 때만 보충한다. 잘못된 ARIA는 없느니만 못하다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "시맨틱 우선",
+      "line": 14
+    },
+    {
+      "id": "A11Y-003",
+      "title": "모든 상호작용은 키보드로 가능해야 한다(Tab 이동, Enter/Space 실행, Esc 닫기).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "키보드",
+      "line": 19
+    },
+    {
+      "id": "A11Y-004",
+      "title": "포커스 순서는 시각 순서와 일치. 커스텀 위젯은 tabindex와 방향키 처리를 명시.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "키보드",
+      "line": 21
+    },
+    {
+      "id": "A11Y-005",
+      "title": "포커스 표시를 지우지 않는다. focus-visible 링을 유지(Tailwind focus-visible: 사용).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "키보드",
+      "line": 23
+    },
+    {
+      "id": "A11Y-006",
+      "title": "모든 입력에 연결된 <label for>(또는 감싼 label). placeholder를 라벨 대용으로 쓰지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "폼",
+      "line": 28
+    },
+    {
+      "id": "A11Y-007",
+      "title": "오류는 텍스트로 제시하고 aria-invalid/aria-describedby로 입력과 연결. 색만으로 표시하지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "폼",
+      "line": 30
+    },
+    {
+      "id": "A11Y-008",
+      "title": "필수 여부·형식 힌트를 시각+프로그램적으로 함께 전달.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "폼",
+      "line": 32
+    },
+    {
+      "id": "A11Y-009",
+      "title": "열릴 때 포커스를 안으로 이동, 닫힐 때 트리거로 복귀. 열려 있는 동안 포커스를 가둔다(focus trap).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "모달·오버레이",
+      "line": 37
+    },
+    {
+      "id": "A11Y-010",
+      "title": "Esc로 닫기. 배경은 aria-hidden 또는 inert 처리.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "모달·오버레이",
+      "line": 39
+    },
+    {
+      "id": "A11Y-011",
+      "title": "표는 <th scope>로 헤더를 명시. 의미 있는 이미지는 alt, 장식 이미지는 빈 alt=\"\".",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "표·이미지·대비",
+      "line": 44
+    },
+    {
+      "id": "A11Y-012",
+      "title": "텍스트 대비는 최소 WCAG AA(본문 4.5:1). Tailwind 색 조합 시 확인.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "표·이미지·대비",
+      "line": 46
+    },
+    {
+      "id": "A11Y-013",
+      "title": "컴포넌트 스펙에 키보드 상호작용/역할을 한 케이스 이상 포함(write-test).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "검증",
+      "line": 51
+    },
+    {
+      "id": "A11Y-014",
+      "title": "최소한 Tab만으로 주요 플로우가 되는지 수동 확인.",
+      "severity": "error",
+      "enforcement": [
+        "human"
+      ],
+      "status": "enforced",
+      "file": "rules/35-accessibility.md",
+      "section": "검증",
+      "line": 53
+    },
+    {
+      "id": "API-001",
+      "title": "요청/응답 타입을 직접 작성하지 않는다. OpenAPI 명세에서 생성한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/40-api-types.md",
+      "section": "타입 생성 (openapi-typescript) — 공통",
+      "line": 8
+    },
+    {
+      "id": "API-002",
+      "title": "출력 src/shared/api/schema.d.ts는 생성 파일 — 손으로 수정 금지, lint/format 제외.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/40-api-types.md",
+      "section": "타입 생성 (openapi-typescript) — 공통",
+      "line": 13
+    },
+    {
+      "id": "API-003",
+      "title": "기본적으로 런타임 스키마 검증 라이브러리(zod 등)를 도입하지 않는다 — 타입은 생성 타입으로 보장.",
+      "severity": "warn",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/40-api-types.md",
+      "section": "타입 생성 (openapi-typescript) — 공통",
+      "line": 16
+    },
+    {
+      "id": "API-004",
+      "title": "생성 타입 + openapi-fetch 클라이언트를 TanStack Query 훅으로 감싼다. 슬라이스 결정:",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/40-api-types.md",
+      "section": "쿼리 훅으로 쓰기",
+      "line": 21
+    },
+    {
+      "id": "ARCH-001",
+      "title": "규칙: 한 계층은 자기 자신과 엄격히 하위인 계층만 import할 수 있다.",
+      "severity": "error",
+      "enforcement": [
+        "lint"
+      ],
+      "tool": "eslint-plugin-boundaries",
+      "status": "enforced",
+      "file": "rules/20-project-structure.md",
+      "section": "FSD 계층 (상위 → 하위)",
+      "line": 34
+    },
+    {
+      "id": "ARCH-002",
+      "title": "eslint-plugin-boundaries가 빌드를 실패시켜 강제한다. 위반은 억제하지 말고 구조를 고친다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/20-project-structure.md",
+      "section": "FSD 계층 (상위 → 하위)",
+      "line": 37
+    },
+    {
+      "id": "ARCH-003",
+      "title": "슬라이스 간 import는 항상 index.ts를 통해서. 깊은 경로 직접 접근 금지.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/20-project-structure.md",
+      "section": "슬라이스 구조 & Public API",
+      "line": 62
+    },
+    {
+      "id": "ARCH-004",
+      "title": "@/ alias 사용 (import { BaseButton } from '@/shared/ui').",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/20-project-structure.md",
+      "section": "슬라이스 구조 & Public API",
+      "line": 64
+    },
+    {
+      "id": "ARCH-005",
+      "title": "도메인 명사 하나 = 슬라이스 하나. cart · product · coupon처럼 비즈니스 명사가 떠오를 때만",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/20-project-structure.md",
+      "section": "슬라이스는 얼마나 잘게 나누나 (생성·병합 기준)",
+      "line": 93
+    },
+    {
+      "id": "ARCH-006",
+      "title": "화면이 하나 늘었다고 만들지 않는다. \"이 도메인만의 데이터·계산·액션\"이 생길 때 만든다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/20-project-structure.md",
+      "section": "슬라이스는 얼마나 잘게 나누나 (생성·병합 기준)",
+      "line": 96
+    },
+    {
+      "id": "ARCH-007",
+      "title": "entity vs feature 경계. entities는 데이터·순수 계산·표현만(사용자 액션 금지).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/20-project-structure.md",
+      "section": "슬라이스는 얼마나 잘게 나누나 (생성·병합 기준)",
+      "line": 98
+    },
+    {
+      "id": "ARCH-008",
+      "title": "widget은 그리기보다 조립. 폼 상태·유효성 같은 로직은 features로 내리고, widget이 껍데기에",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/20-project-structure.md",
+      "section": "슬라이스는 얼마나 잘게 나누나 (생성·병합 기준)",
+      "line": 101
+    },
+    {
+      "id": "ARCH-009",
+      "title": "병합. 두 슬라이스가 늘 함께만 바뀌고 따로 재사용된 적이 없으면 하나로 합친다(질문 5의 응집도와 같은 잣대).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/20-project-structure.md",
+      "section": "슬라이스는 얼마나 잘게 나누나 (생성·병합 기준)",
+      "line": 104
+    },
+    {
+      "id": "CI-001",
+      "title": "모든 PR — 머지 게이트. 초록이 아니면 머지 불가.",
+      "severity": "error",
+      "enforcement": [
+        "ci"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "언제 도는가",
+      "line": 10
+    },
+    {
+      "id": "CI-002",
+      "title": "main push — 통합 후 재검증.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "언제 도는가",
+      "line": 12
+    },
+    {
+      "id": "CI-003",
+      "title": "concurrency + cancel-in-progress로 같은 ref의 이전 실행은 취소(자원 절약).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "언제 도는가",
+      "line": 14
+    },
+    {
+      "id": "CI-004",
+      "title": "format은 CI에서 --check (수정하지 않고 검증만). 로컬 pre-commit이 이미 정리하므로 여기서 실패하면 커밋 전에 포맷을 안 돌린 것.",
+      "severity": "error",
+      "enforcement": [
+        "ci"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "무엇을 강제하나 (게이트)",
+      "line": 26
+    },
+    {
+      "id": "CI-005",
+      "title": "모든 잡이 green이어야 머지(rules/70).",
+      "severity": "error",
+      "enforcement": [
+        "ci"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "무엇을 강제하나 (게이트)",
+      "line": 28
+    },
+    {
+      "id": "CI-006",
+      "title": "실패를 억제/스킵으로 통과시키지 않는다. 테스트 skip, 잡 삭제, continue-on-error 남용 금지(rules/10).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "규칙",
+      "line": 33
+    },
+    {
+      "id": "CI-007",
+      "title": "flaky 테스트는 재시도로 덮지 말고 원인을 해결한다. (Playwright는 CI에서 retries 2, forbidOnly, workers:1로 고정)",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "규칙",
+      "line": 35
+    },
+    {
+      "id": "CI-008",
+      "title": "재현성 — 정확한 lockfile 설치(npm ci / pnpm install --frozen-lockfile), Node 버전 고정.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "규칙",
+      "line": 37
+    },
+    {
+      "id": "CI-009",
+      "title": "시크릿 — GitHub Secrets로만 주입. 로그·아티팩트에 노출 금지(rules/80). 포크 PR에는 시크릿 미노출.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "규칙",
+      "line": 39
+    },
+    {
+      "id": "CI-010",
+      "title": "CI 설정 변경도 요청 범위·사유를 먼저 밝힌다(rules/10).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/90-ci.md",
+      "section": "규칙",
+      "line": 41
+    },
+    {
       "id": "CORE-001",
       "title": "명시되지 않은 패키지, 설정을 임의로 추가하지 않는다.",
       "severity": "error",
@@ -223,6 +668,1793 @@
       "line": 40
     },
     {
+      "id": "CORE-019",
+      "title": "TypeScript strict · 빌드는 Vite(Vue·React) / Next 자체 빌드(Next.js, App Router)",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "스택 (고정)",
+      "line": 16
+    },
+    {
+      "id": "CORE-020",
+      "title": "서버 상태: TanStack Query · 타입세이프 API: openapi-typescript + openapi-fetch",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "스택 (고정)",
+      "line": 18
+    },
+    {
+      "id": "CORE-021",
+      "title": "스타일: Tailwind CSS v4 + cva/cn · 디자인 토큰(Token Studio → gen-tokens)",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "스택 (고정)",
+      "line": 20
+    },
+    {
+      "id": "CORE-022",
+      "title": "아키텍처: Feature-Sliced Design",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "스택 (고정)",
+      "line": 22
+    },
+    {
+      "id": "CORE-023",
+      "title": "모노레포: pnpm workspace + Turborepo (apps/*, packages/*)",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "스택 (고정)",
+      "line": 24
+    },
+    {
+      "id": "CORE-024",
+      "title": "테스트: Vitest · Playwright · Storybook",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "스택 (고정)",
+      "line": 26
+    },
+    {
+      "id": "CORE-025",
+      "title": "품질: oxlint + ESLint(import-x + boundaries) · Prettier · commitlint + husky",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "스택 (고정)",
+      "line": 28
+    },
+    {
+      "id": "CORE-026",
+      "title": "규칙(rules/)이 SSoT다. 규칙과 코드/스킬이 어긋나면 규칙을 따르거나, 규칙 변경을 먼저 합의한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "작업 기본 원칙",
+      "line": 44
+    },
+    {
+      "id": "CORE-027",
+      "title": "포매터/린터와 싸우지 않는다. import 순서·클래스 정렬은 도구가 자동 처리한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "작업 기본 원칙",
+      "line": 47
+    },
+    {
+      "id": "CORE-028",
+      "title": "서버 데이터는 TanStack Query, 클라이언트 상태만 스토어(Pinia/Zustand). 둘을 섞지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "작업 기본 원칙",
+      "line": 49
+    },
+    {
+      "id": "CORE-029",
+      "title": "컴포넌트/슬라이스 추가는 항상 해당 스킬 절차를 따라 동일 품질을 유지한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/00-core.md",
+      "section": "작업 기본 원칙",
+      "line": 51
+    },
+    {
+      "id": "CORE-030",
+      "title": "범위 확인 먼저 — 요청이 모호하거나 영향 범위가 크면(3파일+ / 설정·구조 변경 / 비가역 작업)",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/05-working-with-claude.md",
+      "section": "1. 작업 흐름",
+      "line": 11
+    },
+    {
+      "id": "CORE-031",
+      "title": "계획 → 실행 — 다단계·다파일 작업은 계획을 먼저 제시(무엇을·왜·어디를). 승인 후 실행.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/05-working-with-claude.md",
+      "section": "1. 작업 흐름",
+      "line": 15
+    },
+    {
+      "id": "CORE-032",
+      "title": "확정되면 실행 — 명백한 기본값이 있는 선택은 되묻지 말고 진행하되 무엇을 했는지 밝힌다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/05-working-with-claude.md",
+      "section": "1. 작업 흐름",
+      "line": 17
+    },
+    {
+      "id": "CORE-033",
+      "title": "rules/10-guardrails.md의 금지 항목은 절대 우선. 범위 밖 변경·임의 패키지·설정 변경·비가역",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/05-working-with-claude.md",
+      "section": "2. 가드레일 준수",
+      "line": 22
+    },
+    {
+      "id": "CORE-034",
+      "title": "테스트/타입체크 결과를 있는 그대로 보고한다. 실패는 출력과 함께 명시, 스킵한 단계는 스킵했다고 말한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/05-working-with-claude.md",
+      "section": "3. 검증과 정직한 보고",
+      "line": 29
+    },
+    {
+      "id": "CORE-035",
+      "title": "\"spec PASS = 검증 완료\"로 단정하지 않는다. 검증된 영역 / 미검증 영역(end-to-end 등) / 추가",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/05-working-with-claude.md",
+      "section": "3. 검증과 정직한 보고",
+      "line": 31
+    },
+    {
+      "id": "CORE-036",
+      "title": "가설 기반 수정은 가설이 틀리면 부분 복원보다 즉시 revert하고, 그 가설로 추가한 스펙도 함께 제거한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/05-working-with-claude.md",
+      "section": "3. 검증과 정직한 보고",
+      "line": 34
+    },
+    {
+      "id": "CORE-037",
+      "title": "주변 코드의 스타일·네이밍·주석 밀도를 따른다. 새 패턴을 임의 도입하지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/05-working-with-claude.md",
+      "section": "4. 코드 일관성",
+      "line": 39
+    },
+    {
+      "id": "CORE-038",
+      "title": "파일/코드 위치는 file:line으로 참조해 리뷰가 쉽게 한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/05-working-with-claude.md",
+      "section": "4. 코드 일관성",
+      "line": 41
+    },
+    {
+      "id": "CORE-039",
+      "title": "3파일 이상 / 구조 변경 / 비가역 작업 / 모호한 요청은 코드보다 계획이 먼저다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/15-working-sessions.md",
+      "section": "계획 먼저",
+      "line": 10
+    },
+    {
+      "id": "CORE-040",
+      "title": "작은 단일 변경은 계획을 건너뛰고 바로 해당 스킬로 간다. 과하게 격식 차리지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/15-working-sessions.md",
+      "section": "계획 먼저",
+      "line": 13
+    },
+    {
+      "id": "CORE-041",
+      "title": "한 대화 세션은 하나의 목표에 집중한다. 목표가 바뀌면 대화를 새로 시작(/clear)한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/15-working-sessions.md",
+      "section": "맥락은 얇게, 한 세션 한 목표",
+      "line": 18
+    },
+    {
+      "id": "CORE-042",
+      "title": "대화가 길어져 느려지거나 앞 내용을 놓치기 시작하면 요약해서 이어 간다(/compact).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/15-working-sessions.md",
+      "section": "맥락은 얇게, 한 세션 한 목표",
+      "line": 20
+    },
+    {
+      "id": "CORE-043",
+      "title": "지금 작업과 무관한 파일을 잔뜩 열어 두지 않는다 — 맥락이 흐려지면 엉뚱한 곳을 고친다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/15-working-sessions.md",
+      "section": "맥락은 얇게, 한 세션 한 목표",
+      "line": 22
+    },
+    {
+      "id": "CORE-044",
+      "title": "단, 비가역·승인 필요 작업에서는 멈춘다: 보호 브랜치 머지(rules/70), 임의 패키지·구조 변경",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/15-working-sessions.md",
+      "section": "자율성과 가드의 균형",
+      "line": 28
+    },
+    {
+      "id": "CORE-045",
+      "title": "큰 작업은 작은 단계로 쪼개 각 단계 후 검증하고(rules/50), 다음으로 넘어간다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/15-working-sessions.md",
+      "section": "단계마다 검증·정직하게",
+      "line": 34
+    },
+    {
+      "id": "FIGMA-001",
+      "title": "Figma MCP로 디자인 컨텍스트 + 스크린샷 + 변수(variables)를 가져와 레이아웃·색·간격·타이포·",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/37-figma-to-code.md",
+      "section": "디자인은 Figma에서 실제 값으로 가져온다",
+      "line": 15
+    },
+    {
+      "id": "FIGMA-002",
+      "title": "노드 링크/ID가 없으면 먼저 요청한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/37-figma-to-code.md",
+      "section": "디자인은 Figma에서 실제 값으로 가져온다",
+      "line": 18
+    },
+    {
+      "id": "FIGMA-003",
+      "title": "색·간격·radius·타이포는 Figma 변수를 우리 디자인 토큰(gen-tokens가 만든 tokens.css,",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/37-figma-to-code.md",
+      "section": "값 매핑 — 하드코딩하지 않는다",
+      "line": 23
+    },
+    {
+      "id": "FIGMA-004",
+      "title": "Figma에 없는 값이 필요하면 임의로 만들지 말고 디자이너/토큰에 확인.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/37-figma-to-code.md",
+      "section": "값 매핑 — 하드코딩하지 않는다",
+      "line": 26
+    },
+    {
+      "id": "FIGMA-005",
+      "title": "Figma Code Connect 매핑이 있으면 그 컴포넌트를 그대로 쓴다. 없으면 shared/ui(또는",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/37-figma-to-code.md",
+      "section": "기존 컴포넌트를 먼저 재사용",
+      "line": 31
+    },
+    {
+      "id": "FIGMA-006",
+      "title": "MCP가 뱉는 자동 생성 코드를 그대로 붙여넣지 않는다 — 우리 컨벤션(interface Props/cva/cn/",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/37-figma-to-code.md",
+      "section": "기존 컴포넌트를 먼저 재사용",
+      "line": 34
+    },
+    {
+      "id": "FIGMA-007",
+      "title": "스타일은 Tailwind 전용 + 다크모드(rules/<fw>/code-style), 접근성 기본(rules/35), 화면 문구는",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/37-figma-to-code.md",
+      "section": "우리 규칙 위에서 구현",
+      "line": 40
+    },
+    {
+      "id": "FIGMA-008",
+      "title": "구현 결과를 Figma 스크린샷과 시각 대조(Storybook에서 상태별로). 픽셀 완벽 집착보다 토큰·간격·",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/37-figma-to-code.md",
+      "section": "검증 — 디자인과 대조",
+      "line": 46
+    },
+    {
+      "id": "FIGMA-009",
+      "title": "특수효과(점선 테두리·복합 그림자·그라디언트 등)는 그대로 안 나올 수 있으니 토큰/유틸로 근사하고",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/37-figma-to-code.md",
+      "section": "검증 — 디자인과 대조",
+      "line": 49
+    },
+    {
+      "id": "GIT-001",
+      "title": "보호 브랜치 직접 커밋/푸시 금지: main, develop, develop-* 등 공유 통합 브랜치.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "브랜치 정책",
+      "line": 8
+    },
+    {
+      "id": "GIT-002",
+      "title": "feature 브랜치 네이밍: feat/<scope>, fix/<scope>, chore/<scope>.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "브랜치 정책",
+      "line": 11
+    },
+    {
+      "id": "GIT-003",
+      "title": "Claude/에이전트는 보호 브랜치로의 로컬 머지·푸시를 자동 수행하지 않는다. 필요한 git 명령을",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "브랜치 정책",
+      "line": 13
+    },
+    {
+      "id": "GIT-004",
+      "title": "Conventional Commits + commitlint 강제(rules/50). 한 커밋 = 한 논리 변경.",
+      "severity": "error",
+      "enforcement": [
+        "lint",
+        "review"
+      ],
+      "tool": "commitlint",
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "커밋",
+      "line": 19
+    },
+    {
+      "id": "GIT-005",
+      "title": "커밋 전 prepare-commit 스킬로 브랜치 가드 + 관심사/중복/재사용 4단 점검.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "커밋",
+      "line": 21
+    },
+    {
+      "id": "GIT-006",
+      "title": "작게, 리뷰 가능한 단위로. 제목은 Conventional Commit 형식.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "PR",
+      "line": 26
+    },
+    {
+      "id": "GIT-007",
+      "title": "본문에 무엇을·왜·어떻게 검증했는지 + 스크린샷/재현 절차(해당 시). 템플릿:",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "PR",
+      "line": 28
+    },
+    {
+      "id": "GIT-008",
+      "title": "CI(lint/type-check/test/build/size)가 초록이어야 머지.",
+      "severity": "error",
+      "enforcement": [
+        "ci"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "PR",
+      "line": 31
+    },
+    {
+      "id": "GIT-009",
+      "title": "리뷰는 정확성(버그) 과 정리(재사용/단순화/효율) 를 분리해서 본다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "리뷰",
+      "line": 36
+    },
+    {
+      "id": "GIT-010",
+      "title": "파괴적 부수효과(자동 삭제·저장·정리 가드)를 바꾸는 PR은 \"반대 방향 실패 모드\"까지 점검(안티 가설).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "리뷰",
+      "line": 38
+    },
+    {
+      "id": "GIT-011",
+      "title": "지적은 file:line으로. 억제(eslint-disable, ts-ignore)로 통과시키지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "리뷰",
+      "line": 40
+    },
+    {
+      "id": "GIT-012",
+      "title": "push 후 원격에 봇/후속 커밋이 붙는 환경이면, 다음 작업 전 git pull --ff-only(또는",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/70-git-and-reviews.md",
+      "section": "동기화",
+      "line": 45
+    },
+    {
+      "id": "NEXT-001",
+      "title": "'use client' 는 정말 필요한 잎(leaf)에만 붙인다 — 상태(useState)·이펙트·이벤트 핸들러·브라우저",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/code-style.md",
+      "section": "서버 컴포넌트가 기본이다",
+      "line": 12
+    },
+    {
+      "id": "NEXT-002",
+      "title": "'use client' 를 트리 위쪽에 남발하지 않는다. 인터랙션 조각만 클라이언트로 떼고, 나머지는 서버에.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/code-style.md",
+      "section": "서버 컴포넌트가 기본이다",
+      "line": 15
+    },
+    {
+      "id": "NEXT-003",
+      "title": "무거운 라이브러리·비밀키·DB 접근은 서버 컴포넌트/서버 액션에만. 클라이언트로 새지 않게.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/code-style.md",
+      "section": "서버 컴포넌트가 기본이다",
+      "line": 17
+    },
+    {
+      "id": "NEXT-004",
+      "title": "링크는 next/link의 <Link href>. 프로그램 이동·경로 읽기는 next/navigation",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/code-style.md",
+      "section": "네비게이션 (pages router 아님)",
+      "line": 22
+    },
+    {
+      "id": "NEXT-005",
+      "title": "useRouter/usePathname 등은 클라이언트 훅이므로 'use client' 파일에서만.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/code-style.md",
+      "section": "네비게이션 (pages router 아님)",
+      "line": 25
+    },
+    {
+      "id": "NEXT-006",
+      "title": "이미지·폰트는 next/image·next/font 사용(최적화).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/code-style.md",
+      "section": "파일·경계",
+      "line": 32
+    },
+    {
+      "id": "NEXT-007",
+      "title": "구간별 렌더 에러는 error.tsx(해당 세그먼트, 'use client' 필수, reset() 제공)로 잡는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/error-handling.md",
+      "section": "렌더 에러 — 파일 경계 사용",
+      "line": 8
+    },
+    {
+      "id": "NEXT-008",
+      "title": "React ErrorBoundary를 수동으로 깔기 전에 이 규약 파일을 먼저 쓴다(App Router 기본 메커니즘).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/error-handling.md",
+      "section": "렌더 에러 — 파일 경계 사용",
+      "line": 11
+    },
+    {
+      "id": "NEXT-009",
+      "title": "서버 컴포넌트 fetch 실패 → 에러를 throw하면 가까운 error.tsx가 받는다. 예상된 \"없음\"은 notFound().",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/error-handling.md",
+      "section": "API·데이터 에러",
+      "line": 16
+    },
+    {
+      "id": "NEXT-010",
+      "title": "Server Action 실패 → 액션이 { ok:false, message } 같은 결과를 반환하게 하고 폼에서 표시(민감정보 노출 금지).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/error-handling.md",
+      "section": "API·데이터 에러",
+      "line": 18
+    },
+    {
+      "id": "NEXT-011",
+      "title": "클라 React Query 에러 → isError/error 분기.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/error-handling.md",
+      "section": "API·데이터 에러",
+      "line": 20
+    },
+    {
+      "id": "NEXT-012",
+      "title": "에러 envelope 파싱은 shared/api에서 단일 처리 — 컴포넌트가 raw 응답을 직접 뜯지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/error-handling.md",
+      "section": "API·데이터 에러",
+      "line": 22
+    },
+    {
+      "id": "NEXT-013",
+      "title": "에러 토스트는 한 레이어만 소유(중앙 인터셉터 또는 호출부). 둘 다면 중복.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/error-handling.md",
+      "section": "토스트 규약 (한 곳에서만)",
+      "line": 27
+    },
+    {
+      "id": "NEXT-014",
+      "title": "성공/에러 메시지는 레지스트리(SSoT)에서 해석. 메시지는 string | string[] 가능성 가정.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/error-handling.md",
+      "section": "토스트 규약 (한 곳에서만)",
+      "line": 29
+    },
+    {
+      "id": "NEXT-015",
+      "title": "서버 검증을 신뢰하되 즉시 UX는 클라 검증으로 보완. 파괴적(비가역) 액션 전 확인 UI.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/error-handling.md",
+      "section": "폼·파괴적 액션",
+      "line": 34
+    },
+    {
+      "id": "NEXT-016",
+      "title": "로케일은 middleware.ts(next-intl) 로 처리 — /[locale]/... 세그먼트 또는 도메인 전략 중 택1.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/i18n.md",
+      "section": "로케일 라우팅",
+      "line": 25
+    },
+    {
+      "id": "NEXT-017",
+      "title": "root layout.tsx에서 NextIntlClientProvider로 클라 컴포넌트에 메시지 전달.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/i18n.md",
+      "section": "로케일 라우팅",
+      "line": 27
+    },
+    {
+      "id": "NEXT-018",
+      "title": "locales/<code>/<domain>.json — 파일명이 최상위 네임스페이스(common.json → t('common.*')).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/i18n.md",
+      "section": "메시지 구조",
+      "line": 32
+    },
+    {
+      "id": "NEXT-019",
+      "title": "ko/가 스키마 기준(SSOT), 타입 보강으로 키 체크. ko에 먼저 추가 후 동기화(누락은 폴백).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/i18n.md",
+      "section": "메시지 구조",
+      "line": 34
+    },
+    {
+      "id": "NEXT-020",
+      "title": "기본 ko, 폴백 en. 복수형·보간({{count}})·날짜/숫자 Intl 활용.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/i18n.md",
+      "section": "메시지 구조",
+      "line": 36
+    },
+    {
+      "id": "NEXT-021",
+      "title": "로케일 전환은 next-intl 라우팅(useRouter/Link로 locale 전환) + <html lang> 반영. UI는",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/i18n.md",
+      "section": "전환",
+      "line": 41
+    },
+    {
+      "id": "NEXT-022",
+      "title": "Next app/ (또는 src/app/)에는 라우팅 특수 파일만(page·layout·loading·error…).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/project-structure.md",
+      "section": "핵심: `app/` 은 라우팅 진입점일 뿐",
+      "line": 11
+    },
+    {
+      "id": "NEXT-023",
+      "title": "이 파일들은 얇게 — FSD 슬라이스에서 화면을 import해 조립만 한다. 비즈니스 로직·상태·데이터",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/project-structure.md",
+      "section": "핵심: `app/` 은 라우팅 진입점일 뿐",
+      "line": 13
+    },
+    {
+      "id": "NEXT-024",
+      "title": "Next 트랙에서는 FSD 화면 레이어 이름을 pageViews로 쓴다. (src/pageViews/<slice>/)",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/project-structure.md",
+      "section": "이름 충돌 해소 ① — FSD `pages` 레이어는 `pageViews`로",
+      "line": 31
+    },
+    {
+      "id": "NEXT-025",
+      "title": "계층 서열은 동일: app → pageViews → widgets → features → entities → shared.",
+      "severity": "error",
+      "enforcement": [
+        "lint"
+      ],
+      "tool": "eslint-plugin-boundaries",
+      "status": "enforced",
+      "file": "rules/next/project-structure.md",
+      "section": "이름 충돌 해소 ① — FSD `pages` 레이어는 `pageViews`로",
+      "line": 33
+    },
+    {
+      "id": "NEXT-026",
+      "title": "라우팅 디렉토리는 하나만. create-next-app을 --src-dir로 만들었으면 전부 src/app/,",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/project-structure.md",
+      "section": "이름 충돌 해소 ② — FSD `app` 레이어와 `src/app` 함정",
+      "line": 44
+    },
+    {
+      "id": "NEXT-027",
+      "title": "FSD app 레이어의 책임(프로바이더·전역 스타일)은 라우팅 디렉토리 안에 둔다:",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/project-structure.md",
+      "section": "이름 충돌 해소 ② — FSD `app` 레이어와 `src/app` 함정",
+      "line": 47
+    },
+    {
+      "id": "NEXT-028",
+      "title": "import 방향(상위→하위만)·public API(index.ts) 규칙 유지. page.tsx는 슬라이스의 index.ts만 import.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/project-structure.md",
+      "section": "경계는 그대로 강제",
+      "line": 64
+    },
+    {
+      "id": "NEXT-029",
+      "title": "서버/클라 경계는 구조와 별개 축이다 — 'use client'는 잎에서만(rules/next/code-style).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/project-structure.md",
+      "section": "경계는 그대로 강제",
+      "line": 66
+    },
+    {
+      "id": "NEXT-030",
+      "title": "병렬(@slot)·인터셉트((.)) 라우트는 필요할 때만(모달 등). 남용 금지.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/routing.md",
+      "section": "폴더 규칙",
+      "line": 24
+    },
+    {
+      "id": "NEXT-031",
+      "title": "메타데이터는 export const metadata 또는 generateMetadata로. <head> 수동 조작 금지.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/routing.md",
+      "section": "규칙",
+      "line": 31
+    },
+    {
+      "id": "NEXT-032",
+      "title": "인증·리다이렉트 같은 경로 가드는 middleware.ts 또는 레이아웃/서버 컴포넌트에서.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/routing.md",
+      "section": "규칙",
+      "line": 34
+    },
+    {
+      "id": "NEXT-033",
+      "title": "첫 렌더에 필요한 데이터는 서버 컴포넌트에서 직접 await fetch()/DB 조회로 가져온다. 클라이언트로",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "서버 데이터 — 먼저 서버 컴포넌트에서",
+      "line": 8
+    },
+    {
+      "id": "NEXT-034",
+      "title": "Next fetch 캐싱 옵션을 명시: cache: 'force-cache'(정적) / no-store'(매요청) / next: { revalidate: N }.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "서버 데이터 — 먼저 서버 컴포넌트에서",
+      "line": 11
+    },
+    {
+      "id": "NEXT-035",
+      "title": "서버에서 받은 데이터는 props로 클라이언트 컴포넌트에 내려준다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "서버 데이터 — 먼저 서버 컴포넌트에서",
+      "line": 13
+    },
+    {
+      "id": "NEXT-036",
+      "title": "클라이언트에서 상호작용으로 다시 받아야 하는 서버 데이터(무한스크롤·낙관적 갱신·폴링)는 React Query.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "클라이언트에서의 서버 상태 — TanStack React Query",
+      "line": 18
+    },
+    {
+      "id": "NEXT-037",
+      "title": "초기 데이터는 서버 컴포넌트에서 받아 initialData(또는 hydration)로 넘겨 중복 요청을 줄인다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "클라이언트에서의 서버 상태 — TanStack React Query",
+      "line": 21
+    },
+    {
+      "id": "NEXT-038",
+      "title": "QueryClientProvider는 클라이언트 프로바이더 컴포넌트('use client')로 감싸 root layout에서 등록.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "클라이언트에서의 서버 상태 — TanStack React Query",
+      "line": 23
+    },
+    {
+      "id": "NEXT-039",
+      "title": "화면이 기억하는 순수 클라 상태(열림/닫힘·선택 등)는 Zustand, model/ 세그먼트. selector로 구독.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "클라이언트 상태 — Zustand",
+      "line": 28
+    },
+    {
+      "id": "NEXT-040",
+      "title": "서버 데이터를 Zustand에 캐싱하지 않는다. 서버 상태는 RSC 또는 React Query 몫.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "클라이언트 상태 — Zustand",
+      "line": 30
+    },
+    {
+      "id": "NEXT-041",
+      "title": "폼 제출·쓰기 작업은 Server Action('use server')을 우선. 클라이언트에서 직접 호출하거나 <form action>.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "변경(mutation) — Server Action 우선",
+      "line": 35
+    },
+    {
+      "id": "NEXT-042",
+      "title": "성공 후 revalidatePath/revalidateTag 로 서버 데이터 갱신. 복잡한 클라 상태 동기화가 필요하면 React Query useMutation.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "변경(mutation) — Server Action 우선",
+      "line": 37
+    },
+    {
+      "id": "NEXT-043",
+      "title": "외부로 노출할 HTTP 엔드포인트가 필요하면 Route Handler(app/api//route.ts).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/next/state-and-data.md",
+      "section": "변경(mutation) — Server Action 우선",
+      "line": 39
+    },
+    {
+      "id": "REACT-001",
+      "title": "함수 컴포넌트 + 훅만 사용. 클래스 컴포넌트 금지. 파일당 하나, PascalCase.tsx.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "컴포넌트 기본",
+      "line": 8
+    },
+    {
+      "id": "REACT-002",
+      "title": "슬라이스 index.ts로 노출.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "컴포넌트 기본",
+      "line": 10
+    },
+    {
+      "id": "REACT-003",
+      "title": "Props는 interface Props로 정의(인라인 지양). 구조분해 + 기본값.",
+      "severity": "warn",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "Props",
+      "line": 15
+    },
+    {
+      "id": "REACT-004",
+      "title": "이벤트는 onXxx 콜백 prop으로. 핸들러 타입 명시((e: MouseEvent) => void).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "Props",
+      "line": 27
+    },
+    {
+      "id": "REACT-005",
+      "title": "variant는 cva로 클래스 정의, VariantProps<typeof xVariants>에서 타입 파생.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "Variant 컴포넌트 (cva + cn)",
+      "line": 32
+    },
+    {
+      "id": "REACT-006",
+      "title": "외부 className은 cn(@/shared/lib, clsx + tailwind-merge)으로 병합.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "Variant 컴포넌트 (cva + cn)",
+      "line": 34
+    },
+    {
+      "id": "REACT-007",
+      "title": "Tailwind 유틸리티 클래스만. 컴포넌트 <style> 없음. 다크모드 dark:.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "스타일",
+      "line": 39
+    },
+    {
+      "id": "REACT-008",
+      "title": "색·간격·타이포는 디자인 토큰 유틸(bg-*, p-*, text-*) 사용, 하드코딩 금지(gen-tokens).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "스타일",
+      "line": 41
+    },
+    {
+      "id": "REACT-009",
+      "title": "상태/데이터는 react/state-and-data(Zustand + React Query). 화면 문구는 react/i18n의 t().",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "상태·데이터·문구",
+      "line": 46
+    },
+    {
+      "id": "REACT-010",
+      "title": "부수효과 없는 순수 계산은 컴포넌트·훅에 두지 말고 lib 세그먼트로 분리",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "상태·데이터·문구",
+      "line": 48
+    },
+    {
+      "id": "REACT-011",
+      "title": "strict 공통 옵션(rules/00-core). any 회피, 좁은 타입 우선. 훅 반환·props 타입 명시.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/code-style.md",
+      "section": "TypeScript",
+      "line": 54
+    },
+    {
+      "id": "REACT-012",
+      "title": "API 에러 — React Query 훅에서 throw(queryFn). 화면은 isError/error로 분기.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/error-handling.md",
+      "section": "에러 소스",
+      "line": 8
+    },
+    {
+      "id": "REACT-013",
+      "title": "렌더 에러 — Error Boundary로 화면 단위로 잡아 폴백 UI를 보여준다(앱이 통째로 죽지 않게).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/error-handling.md",
+      "section": "에러 소스",
+      "line": 10
+    },
+    {
+      "id": "REACT-014",
+      "title": "에러 envelope — 백엔드 규약에 맞춘 파싱을 shared/api에서 단일 처리. 컴포넌트가 raw 응답을 직접 뜯지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/error-handling.md",
+      "section": "에러 소스",
+      "line": 12
+    },
+    {
+      "id": "REACT-015",
+      "title": "에러 토스트는 한 레이어만 소유한다 — 중앙 인터셉터 또는 호출부 중 하나. 둘 다 하면 중복.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/error-handling.md",
+      "section": "토스트 규약 (한 곳에서만)",
+      "line": 17
+    },
+    {
+      "id": "REACT-016",
+      "title": "성공/에러 메시지는 레지스트리(SSoT)에서 해석. 메시지는 string | string[] 가능성 가정.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/error-handling.md",
+      "section": "토스트 규약 (한 곳에서만)",
+      "line": 19
+    },
+    {
+      "id": "REACT-017",
+      "title": "서버 검증을 신뢰하되 즉시 UX는 클라이언트 검증으로 보완. 파괴적(비가역) 액션 전 확인 UI.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/error-handling.md",
+      "section": "폼·파괴적 액션",
+      "line": 24
+    },
+    {
+      "id": "REACT-018",
+      "title": "locales/<code>/<domain>.json — 파일명이 최상위 네임스페이스(common.json → t('common.*')).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/i18n.md",
+      "section": "메시지 구조",
+      "line": 20
+    },
+    {
+      "id": "REACT-019",
+      "title": "ko/가 스키마 기준(SSOT) — i18next 타입 보강(Resources)으로 키 타입 체크. ko에 먼저 추가 후",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/i18n.md",
+      "section": "메시지 구조",
+      "line": 22
+    },
+    {
+      "id": "REACT-020",
+      "title": "기본 로케일 ko, 폴백 en. 초기값: localStorage → navigator.language → 기본.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/i18n.md",
+      "section": "메시지 구조",
+      "line": 25
+    },
+    {
+      "id": "REACT-021",
+      "title": "개수 문구는 i18next pluralization, 변수는 보간({{count}}), 날짜·숫자는 Intl.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/i18n.md",
+      "section": "복수형·변수·서식",
+      "line": 30
+    },
+    {
+      "id": "REACT-022",
+      "title": "i18n.changeLanguage(code) + localStorage 저장 + <html lang> 갱신을 묶은 setLocale 헬퍼.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/i18n.md",
+      "section": "전환·등록",
+      "line": 35
+    },
+    {
+      "id": "REACT-023",
+      "title": "컴포넌트 테스트는 <I18nextProvider i18n={i18n}>로 감싸 마운트. Storybook은 decorator로 전역 설치.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/i18n.md",
+      "section": "테스트",
+      "line": 41
+    },
+    {
+      "id": "REACT-024",
+      "title": "컴포넌트에서는 selector로 필요한 값만 구독: const items = useXStore((s) => s.items).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/state-and-data.md",
+      "section": "클라이언트 상태 — Zustand",
+      "line": 15
+    },
+    {
+      "id": "REACT-025",
+      "title": "서버 데이터를 Zustand에 캐싱하지 않는다 — 그건 React Query의 몫.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/state-and-data.md",
+      "section": "클라이언트 상태 — Zustand",
+      "line": 17
+    },
+    {
+      "id": "REACT-026",
+      "title": "스토어는 슬라이스 model/ 세그먼트에.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/state-and-data.md",
+      "section": "클라이언트 상태 — Zustand",
+      "line": 19
+    },
+    {
+      "id": "REACT-027",
+      "title": "@tanstack/react-query의 useQuery/useMutation. apiClient.GET('/path') → { data, error }",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/state-and-data.md",
+      "section": "서버 상태 — TanStack React Query",
+      "line": 24
+    },
+    {
+      "id": "REACT-028",
+      "title": "쿼리 키는 훅과 colocation하고 export. 타입은 openapi 생성 타입 사용(rules/40).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/state-and-data.md",
+      "section": "서버 상태 — TanStack React Query",
+      "line": 27
+    },
+    {
+      "id": "REACT-029",
+      "title": "훅은 슬라이스 api/ 세그먼트에 두고 index.ts로 export. QueryClientProvider는 app에서 1회 등록.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/react/state-and-data.md",
+      "section": "서버 상태 — TanStack React Query",
+      "line": 44
+    },
+    {
+      "id": "SEC-001",
+      "title": "API Key, Secret, Token, DB 접속 정보, 인증 정보를 코드/커밋에 절대 하드코딩하지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "시크릿",
+      "line": 8
+    },
+    {
+      "id": "SEC-002",
+      "title": "환경 변수는 .env(git 무시) + .env.example(키 이름만, 값 없이)로 관리.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "시크릿",
+      "line": 10
+    },
+    {
+      "id": "SEC-003",
+      "title": ".env/시크릿 파일은 읽지도 출력하지도 않는다(로그·PR·이슈 포함). settings.json에서 read deny.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "시크릿",
+      "line": 13
+    },
+    {
+      "id": "SEC-004",
+      "title": "새 패키지는 rules/10-guardrails.md의 추가 기준(필요성·대안·번들 영향·유지보수 상태)을 충족하고 승인받아야.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "의존성",
+      "line": 22
+    },
+    {
+      "id": "SEC-005",
+      "title": "버전 임의 변경 금지. lockfile(pnpm-lock.yaml)을 커밋에 포함해 재현성 유지.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "의존성",
+      "line": 24
+    },
+    {
+      "id": "SEC-006",
+      "title": "생성 파일(schema.d.ts)·서드파티 코드는 손대지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "의존성",
+      "line": 26
+    },
+    {
+      "id": "SEC-007",
+      "title": "사용자 입력을 신뢰하지 않는다. v-html/innerHTML 등 DOM 주입은 피하고, 불가피하면 sanitize.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "클라이언트 보안 기본",
+      "line": 31
+    },
+    {
+      "id": "SEC-008",
+      "title": "인증 토큰은 안전한 저장소 정책을 따르고, 라우트 가드로 보호 페이지 접근을 통제.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "클라이언트 보안 기본",
+      "line": 33
+    },
+    {
+      "id": "SEC-009",
+      "title": "외부로 데이터를 보내는 동작(로그 전송·서드파티 API)은 사용자 데이터 노출 여부를 먼저 확인.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "클라이언트 보안 기본",
+      "line": 35
+    },
+    {
+      "id": "SEC-010",
+      "title": "에이전트는 시크릿을 요청·수집·출력하지 않는다. 인증이 필요한 작업은 사용자에게 위임한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "AI 작업 시",
+      "line": 40
+    },
+    {
+      "id": "SEC-011",
+      "title": "대량 파괴적 작업(rm -rf 등)은 수행하지 않는다(settings.json deny).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/80-security-and-secrets.md",
+      "section": "AI 작업 시",
+      "line": 42
+    },
+    {
+      "id": "TEST-001",
+      "title": "유닛/컴포넌트 — Vitest. 컴포넌트 렌더 도구는 프레임워크별: Vue = @vue/test-utils,",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "테스트 3층",
+      "line": 8
+    },
+    {
+      "id": "TEST-002",
+      "title": "E2E — Playwright. 스펙은 e2e/ (Vitest는 무시). build 후 preview 서빙.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "테스트 3층",
+      "line": 11
+    },
+    {
+      "id": "TEST-003",
+      "title": "컴포넌트 문서/개발 — Storybook. 스토리 title은 FSD 경로(예: shared/ui/BaseButton).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "테스트 3층",
+      "line": 13
+    },
+    {
+      "id": "TEST-004",
+      "title": "신규 shared/feature 컴포넌트는 스펙 + 스토리를 함께 제공.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "테스트 3층",
+      "line": 18
+    },
+    {
+      "id": "TEST-005",
+      "title": "컴포넌트 테스트는 렌더/prop 분기/이벤트 + 외부 class의 tailwind-merge 충돌 해소까지 커버.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "테스트 3층",
+      "line": 20
+    },
+    {
+      "id": "TEST-006",
+      "title": "커버리지 include는 src//*.{ts,tsx,vue}, 생성/부트스트랩 파일(schema.d.ts, main.ts(x))은 제외.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "테스트 3층",
+      "line": 23
+    },
+    {
+      "id": "TEST-007",
+      "title": "실패 테스트를 삭제/비활성화로 해결하지 않는다 (→ 10-guardrails.md).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "테스트 3층",
+      "line": 25
+    },
+    {
+      "id": "TEST-008",
+      "title": "oxlint correctness: error — 빠른 1차 게이트.",
+      "severity": "error",
+      "enforcement": [
+        "lint"
+      ],
+      "tool": "oxlint",
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "품질 게이트 (자동 강제)",
+      "line": 30
+    },
+    {
+      "id": "TEST-009",
+      "title": "ESLint — import 위생(import-x) + FSD 경계(boundaries). 위반 억제 금지.",
+      "severity": "error",
+      "enforcement": [
+        "lint",
+        "review"
+      ],
+      "tool": "eslint-plugin-import-x,eslint-plugin-boundaries",
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "품질 게이트 (자동 강제)",
+      "line": 32
+    },
+    {
+      "id": "TEST-010",
+      "title": "Prettier (+ tailwind 플러그인) — 포맷·클래스 순서 자동. 도구와 싸우지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "lint",
+        "review"
+      ],
+      "tool": "prettier",
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "품질 게이트 (자동 강제)",
+      "line": 34
+    },
+    {
+      "id": "TEST-011",
+      "title": "size-limit — 번들 예산(앱 JS 100kB / CSS 15kB gzip). 초과 시 원인 규명.",
+      "severity": "error",
+      "enforcement": [
+        "ci",
+        "review"
+      ],
+      "tool": "size-limit",
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "품질 게이트 (자동 강제)",
+      "line": 36
+    },
+    {
+      "id": "TEST-012",
+      "title": "로직/유틸/스토어/컴포넌트 동작 → 유닛/컴포넌트(Vitest).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "작업 후 검증 절차 (runbook)",
+      "line": 60
+    },
+    {
+      "id": "TEST-013",
+      "title": "파괴적 가드(자동 삭제·저장 등) 변경 → 회귀 스펙 필수 + 반대 방향(안티 가설) 케이스.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "작업 후 검증 절차 (runbook)",
+      "line": 62
+    },
+    {
+      "id": "TEST-014",
+      "title": "라우팅·인증·다화면 플로우 → E2E(Playwright).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "작업 후 검증 절차 (runbook)",
+      "line": 64
+    },
+    {
+      "id": "TEST-015",
+      "title": "단순 className/문서 변경 → 회귀 스펙 비용 > 가치면 스킵하되 커밋 본문에 사유 명시.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "작업 후 검증 절차 (runbook)",
+      "line": 66
+    },
+    {
+      "id": "TEST-016",
+      "title": "git commit --no-verify(-n)로 훅 우회 금지. 훅 실패는 무시가 아니라 원인 해결로 대응한다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "Git hooks (husky) — 언제 무엇이 실행되나",
+      "line": 94
+    },
+    {
+      "id": "TEST-017",
+      "title": "Conventional Commits — commit-msg 훅에서 commitlint 강제.",
+      "severity": "error",
+      "enforcement": [
+        "lint"
+      ],
+      "tool": "commitlint",
+      "status": "enforced",
+      "file": "rules/50-testing-quality.md",
+      "section": "커밋",
+      "line": 107
+    },
+    {
       "id": "UI-001",
       "title": "색은 토큰으로만 쓴다. #hex·rgb() 같은 색 값이나 Tailwind 기본 팔레트(bg-gray-100, text-red-500)를 코드에 직접 쓰지 않는다.",
       "severity": "error",
@@ -345,6 +2577,404 @@
       "file": "rules/30-design.md",
       "section": "원칙",
       "line": 42
+    },
+    {
+      "id": "VUE-001",
+      "title": "<script setup lang=\"ts\"> + Composition API만 사용. Options API 금지.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "SFC 기본",
+      "line": 8
+    },
+    {
+      "id": "VUE-002",
+      "title": "컴포넌트는 PascalCase.vue, 파일당 하나, 슬라이스 index.ts로 노출.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "SFC 기본",
+      "line": 10
+    },
+    {
+      "id": "VUE-003",
+      "title": "Props는 인라인 금지. interface Props 정의 후 withDefaults(defineProps<Props>(), { ... }).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "Props / Emits",
+      "line": 15
+    },
+    {
+      "id": "VUE-004",
+      "title": "이벤트는 defineEmits<{ eventName: [payload] }>()로 타이핑.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "Props / Emits",
+      "line": 17
+    },
+    {
+      "id": "VUE-005",
+      "title": "variant가 있으면 cva로 클래스 정의, VariantProps<typeof xVariants>에서 타입 파생.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "Variant 컴포넌트 (cva + cn)",
+      "line": 33
+    },
+    {
+      "id": "VUE-006",
+      "title": "외부 주입 클래스는 class?: HTMLAttributes['class']로 받아 cn(@/shared/lib)으로 병합 —",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "Variant 컴포넌트 (cva + cn)",
+      "line": 35
+    },
+    {
+      "id": "VUE-007",
+      "title": "부수효과 없는 순수 계산은 컴포넌트·스토어에 두지 말고 lib 세그먼트로 분리",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "상태·데이터",
+      "line": 43
+    },
+    {
+      "id": "VUE-008",
+      "title": "Tailwind 유틸리티 클래스만. 컴포넌트별 <style> 블록 금지. (→ styling은 이 문서에 통합)",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "스타일",
+      "line": 55
+    },
+    {
+      "id": "VUE-009",
+      "title": "다크모드는 dark:. 전역 설정은 app/styles/main.css. 클래스 순서는 prettier가 정렬.",
+      "severity": "error",
+      "enforcement": [
+        "lint",
+        "review"
+      ],
+      "tool": "prettier",
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "스타일",
+      "line": 57
+    },
+    {
+      "id": "VUE-010",
+      "title": "디자인 토큰: 색상·간격·radius·타이포는 하드코딩 대신 토큰 유틸(bg-bg-default, p-md 등)을",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/code-style.md",
+      "section": "스타일",
+      "line": 59
+    },
+    {
+      "id": "VUE-011",
+      "title": "API 에러 — Vue Query 훅에서 throw error. 화면은 isError/error로 분기.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/error-handling.md",
+      "section": "에러 소스",
+      "line": 10
+    },
+    {
+      "id": "VUE-012",
+      "title": "에러 envelope — 백엔드 규약에 맞춘 형태를 shared/api에서 단일 파싱. 컴포넌트가 raw 응답을",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/error-handling.md",
+      "section": "에러 소스",
+      "line": 12
+    },
+    {
+      "id": "VUE-013",
+      "title": "에러 토스트는 한 레이어만 소유한다 — 중앙 인터셉터 또는 호출부 catch 중 하나.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/error-handling.md",
+      "section": "토스트 규약 (한 곳에서만 발생)",
+      "line": 18
+    },
+    {
+      "id": "VUE-014",
+      "title": "성공/에러 메시지는 레지스트리(SSoT)에서 해석. 메시지 문자열을 컴포넌트에 흩뿌리지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/error-handling.md",
+      "section": "토스트 규약 (한 곳에서만 발생)",
+      "line": 21
+    },
+    {
+      "id": "VUE-015",
+      "title": "메시지는 string | string[] 가능성을 항상 가정(검증 에러 배열).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/error-handling.md",
+      "section": "토스트 규약 (한 곳에서만 발생)",
+      "line": 23
+    },
+    {
+      "id": "VUE-016",
+      "title": "서버 검증 응답을 신뢰하되, 즉시 UX는 클라이언트 검증으로 보완.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/error-handling.md",
+      "section": "폼/입력 검증",
+      "line": 28
+    },
+    {
+      "id": "VUE-017",
+      "title": "파괴적(비가역) 액션 전에는 확인 UI를 둔다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/error-handling.md",
+      "section": "폼/입력 검증",
+      "line": 30
+    },
+    {
+      "id": "VUE-018",
+      "title": "사용자에게 보이는 모든 텍스트는 메시지 키로 참조한다. 템플릿에 한국어/영어 문자열을 직접 박지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "문구는 하드코딩하지 않는다",
+      "line": 12
+    },
+    {
+      "id": "VUE-019",
+      "title": "locales/<code>/<domain>.json — 파일명이 곧 최상위 네임스페이스(common.json → t('common.*'),",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "메시지 구조 (언어별 폴더 + 도메인별 파일)",
+      "line": 27
+    },
+    {
+      "id": "VUE-020",
+      "title": "ko/가 메시지 스키마의 기준(SSOT) — i18n.d.ts가 이걸로 타입을 잡는다. ko에 먼저 키를",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "메시지 구조 (언어별 폴더 + 도메인별 파일)",
+      "line": 30
+    },
+    {
+      "id": "VUE-021",
+      "title": "기본 로케일 ko, 폴백 en. 초기값: localStorage('locale') → navigator.language → 기본.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "메시지 구조 (언어별 폴더 + 도메인별 파일)",
+      "line": 33
+    },
+    {
+      "id": "VUE-022",
+      "title": "개수 문구는 vue-i18n pluralization을 쓰고 문자열을 직접 잇지 않는다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "복수형·변수·서식",
+      "line": 38
+    },
+    {
+      "id": "VUE-023",
+      "title": "변수는 보간({count}). 문장을 조각내어 연결하면 번역이 깨진다.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "복수형·변수·서식",
+      "line": 40
+    },
+    {
+      "id": "VUE-024",
+      "title": "날짜·숫자·통화는 Intl(또는 i18n 포맷터)로 로케일에 맞춰 출력.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "복수형·변수·서식",
+      "line": 42
+    },
+    {
+      "id": "VUE-025",
+      "title": "프로그램 전환은 setLocale(code) (활성 로케일 + localStorage + <html lang> 동시 갱신).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "언어 전환·등록",
+      "line": 47
+    },
+    {
+      "id": "VUE-026",
+      "title": "인스턴스는 app/providers에서 app.use(i18n)로 등록(이미 연결됨). 새 언어는",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "언어 전환·등록",
+      "line": 50
+    },
+    {
+      "id": "VUE-027",
+      "title": "컴포넌트 유닛 테스트는 i18n 플러그인을 주입해 마운트: mount(C, { global: { plugins: [i18n] } }).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "테스트",
+      "line": 56
+    },
+    {
+      "id": "VUE-028",
+      "title": "하드코딩된 사용자 문구가 없는지 리뷰에서 확인(review-changes). 로케일 전환이 라우팅에",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/i18n.md",
+      "section": "검증",
+      "line": 62
+    },
+    {
+      "id": "VUE-029",
+      "title": "서버 데이터를 Pinia에 캐싱하지 않는다 — 그건 Vue Query의 몫.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/state-and-data.md",
+      "section": "클라이언트 상태 — Pinia (setup-store)",
+      "line": 19
+    },
+    {
+      "id": "VUE-030",
+      "title": "스토어는 슬라이스 model/ 세그먼트에.",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/state-and-data.md",
+      "section": "클라이언트 상태 — Pinia (setup-store)",
+      "line": 21
+    },
+    {
+      "id": "VUE-031",
+      "title": "@tanstack/vue-query의 useQuery/useMutation. apiClient.GET('/path') → { data, error }",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/state-and-data.md",
+      "section": "서버 상태 — TanStack Vue Query",
+      "line": 26
+    },
+    {
+      "id": "VUE-032",
+      "title": "쿼리 키는 훅과 colocation하고 export. 타입은 openapi 생성 타입 사용(rules/40).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/state-and-data.md",
+      "section": "서버 상태 — TanStack Vue Query",
+      "line": 29
+    },
+    {
+      "id": "VUE-033",
+      "title": "훅은 슬라이스 api/ 세그먼트에 두고 index.ts로 export. 컴포넌트에서 useI18n으로 문구는 별도(vue/i18n).",
+      "severity": "error",
+      "enforcement": [
+        "review"
+      ],
+      "status": "enforced",
+      "file": "rules/vue/state-and-data.md",
+      "section": "서버 상태 — TanStack Vue Query",
+      "line": 46
     }
   ]
 }
